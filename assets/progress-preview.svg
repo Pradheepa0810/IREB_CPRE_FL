@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">CPRE Study progress preview</title>
+  <desc id="desc">Stylized preview of the progress screen with stats and a chapter table.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fffbeb"/>
+    </linearGradient>
+    <filter id="shadow2" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#a16207" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg2)"/>
+  <rect x="74" y="52" width="1132" height="616" rx="28" fill="#fff" filter="url(#shadow2)"/>
+  <rect x="74" y="52" width="1132" height="84" rx="28" fill="#fffbeb"/>
+  <text x="112" y="108" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700" fill="#1c1917">Progress Overview</text>
+  <rect x="112" y="166" width="220" height="110" rx="22" fill="#ecfdf5" stroke="#16a34a" stroke-width="2"/>
+  <rect x="354" y="166" width="220" height="110" rx="22" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+  <rect x="596" y="166" width="220" height="110" rx="22" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <rect x="838" y="166" width="220" height="110" rx="22" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="138" y="205" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#166534">Completed</text>
+  <text x="138" y="245" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#166534">18</text>
+  <text x="380" y="205" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#b45309">Due soon</text>
+  <text x="380" y="245" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#b45309">7</text>
+  <text x="622" y="205" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#1d4ed8">Avg score</text>
+  <text x="622" y="245" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#1d4ed8">86%</text>
+  <text x="864" y="205" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#b91c1c">Needs review</text>
+  <text x="864" y="245" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#b91c1c">3</text>
+  <rect x="112" y="312" width="1056" height="296" rx="22" fill="#ffffff" stroke="#e7e5e4" stroke-width="2"/>
+  <rect x="112" y="312" width="1056" height="52" rx="22" fill="#f8fafc"/>
+  <text x="138" y="344" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#78716c">Chapter</text>
+  <text x="445" y="344" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#78716c">Flashcards</text>
+  <text x="695" y="344" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#78716c">Quiz score</text>
+  <text x="930" y="344" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#78716c">Status</text>
+  <line x1="112" y1="364" x2="1168" y2="364" stroke="#e7e5e4"/>
+  <text x="138" y="412" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#1c1917">Requirements Engineering</text>
+  <text x="445" y="412" font-family="Inter, Arial, sans-serif" font-size="15" fill="#1c1917">42</text>
+  <text x="695" y="412" font-family="Inter, Arial, sans-serif" font-size="15" fill="#1c1917">91%</text>
+  <rect x="920" y="392" width="120" height="30" rx="15" fill="#dcfce7"/>
+  <text x="954" y="412" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#16a34a">On track</text>
+  <text x="138" y="476" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#1c1917">Elicitation Techniques</text>
+  <text x="445" y="476" font-family="Inter, Arial, sans-serif" font-size="15" fill="#1c1917">31</text>
+  <text x="695" y="476" font-family="Inter, Arial, sans-serif" font-size="15" fill="#1c1917">79%</text>
+  <rect x="920" y="456" width="120" height="30" rx="15" fill="#fef3c7"/>
+  <text x="949" y="476" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#d97706">Review</text>
+  <text x="138" y="540" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#1c1917">Validation</text>
+  <text x="445" y="540" font-family="Inter, Arial, sans-serif" font-size="15" fill="#1c1917">24</text>
+  <text x="695" y="540" font-family="Inter, Arial, sans-serif" font-size="15" fill="#1c1917">88%</text>
+  <rect x="920" y="520" width="120" height="30" rx="15" fill="#dcfce7"/>
+  <text x="954" y="540" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" fill="#16a34a">Good</text>
+</svg>

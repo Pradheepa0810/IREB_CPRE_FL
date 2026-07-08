@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">CPRE Study dashboard preview</title>
+  <desc id="desc">Stylized preview of the CPRE Study dashboard with chapter cards and progress widgets.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8f7f4"/>
+      <stop offset="100%" stop-color="#fff7ed"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#9a3412" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <circle cx="1080" cy="130" r="140" fill="#fde68a" opacity="0.35"/>
+  <circle cx="180" cy="610" r="180" fill="#fed7aa" opacity="0.22"/>
+  <rect x="80" y="55" width="1120" height="610" rx="28" fill="#ffffff" filter="url(#shadow)"/>
+  <rect x="80" y="55" width="1120" height="78" rx="28" fill="#fff7ed"/>
+  <rect x="112" y="78" width="170" height="28" rx="14" fill="url(#accent)"/>
+  <rect x="920" y="76" width="92" height="16" rx="8" fill="#e7e5e4"/>
+  <rect x="1028" y="76" width="92" height="16" rx="8" fill="#e7e5e4"/>
+  <rect x="1120" y="72" width="42" height="24" rx="12" fill="#fde68a"/>
+  <text x="112" y="194" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700" fill="#1c1917">CPRE Study Dashboard</text>
+  <text x="112" y="230" font-family="Inter, Arial, sans-serif" font-size="17" fill="#78716c">Flashcards, quizzes, and progress tracking for IREB CPRE Foundation Level prep.</text>
+  <rect x="112" y="268" width="240" height="154" rx="22" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+  <rect x="376" y="268" width="240" height="154" rx="22" fill="#ffffff" stroke="#e7e5e4" stroke-width="2"/>
+  <rect x="640" y="268" width="240" height="154" rx="22" fill="#ffffff" stroke="#e7e5e4" stroke-width="2"/>
+  <rect x="904" y="268" width="240" height="154" rx="22" fill="#ffffff" stroke="#e7e5e4" stroke-width="2"/>
+  <text x="138" y="311" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#d97706">Chapter 1</text>
+  <text x="138" y="344" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="#1c1917">Requirements Engineering</text>
+  <rect x="138" y="368" width="176" height="10" rx="5" fill="#e7e5e4"/>
+  <rect x="138" y="368" width="118" height="10" rx="5" fill="url(#accent)"/>
+  <text x="402" y="311" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#78716c">Flashcards</text>
+  <text x="402" y="344" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="#1c1917">Spaced repetition</text>
+  <text x="666" y="311" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#78716c">Quizzes</text>
+  <text x="666" y="344" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="#1c1917">Instant feedback</text>
+  <text x="930" y="311" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#78716c">Progress</text>
+  <text x="930" y="344" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" fill="#1c1917">Session tracking</text>
+  <circle cx="1019" cy="375" r="42" fill="#fff7ed" stroke="#f59e0b" stroke-width="10"/>
+  <text x="971" y="456" font-family="Inter, Arial, sans-serif" font-size="14" fill="#78716c">Review progress at a glance</text>
+</svg>

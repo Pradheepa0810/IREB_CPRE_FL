@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CPRE Study Pro — Premium Spaced Repetition Learning</title>
+<link href="https://rsms.me/inter/inter.css" rel="stylesheet"/>
+<style>
+/* =====================================================================
+   CPRE STUDY PRO — Premium SaaS Flashcard Learning Platform
+   Inspired by: Brainscape, Notion, Linear, Duolingo, Stripe Dashboard
+===================================================================== */
+
+:root {
+  /* Primary palette */
+  --primary: #2563EB;
+  --primary-light: #3B82F6;
+  --primary-dark: #1E40AF;
+  --accent: #7a92c2;
+  --success: #10B981;
+  --success-light: #D1FAE5;
+  --warning: #F59E0B;
+  --warning-light: #FEF3C7;
+  --error: #EF4444;
+  --error-light: #FEE2E2;
+  
+  /* Backgrounds */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #e4ecf5;
+  --bg-card: #ffffff;
+  
+  /* Borders & text */
+  --border: #191b57;
+  --border-light: #CBD5E1;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-tertiary: #94A3B8;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.1), 0 2px 4px -1px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -2px rgba(15, 23, 42, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
+  
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  
+  /* Transitions */
+  --duration: 200ms;
+}
+
+/* Dark mode */
+html.dark-mode {
+  --bg-primary: #0F172A;
+  --bg-secondary: #1E293B;
+  --bg-card: #1E293B;
+  --text-primary: #F1F5F9;
+  --text-secondary: #CBD5E1;
+  --text-tertiary: #64748B;
+  --border-light: #334155;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ===== LAYOUT ===== */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+/* Header */
+header {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-light);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.375rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 0.875rem;
+}
+
+.nav {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.nav-btn {
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: all var(--duration) ease;
+  font-family: inherit;
+}
+
+.nav-btn:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.nav-btn.active {
+  background: var(--primary);
+  color: white;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-left: auto;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  transition: all var(--duration) ease;
+}
+
+.icon-btn:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* Main */
+main {
+  flex: 1;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ===== DASHBOARD ===== */
+.dashboard {
+  animation: fadeIn 0.3s ease;
+}
+
+.dashboard-header {
+  margin-bottom: 3rem;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.dashboard-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.action-card {
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--duration) ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+}
+
+.action-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.action-icon {
+  font-size: 2rem;
+}
+
+.action-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Deck grid */
+.decks-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.deck-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all var(--duration) ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.deck-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.deck-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.deck-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.deck-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.deck-badge {
+  padding: 0.25rem 0.75rem;
+  background: var(--success-light);
+  color: var(--success);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.deck-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.deck-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.deck-stat {
+  text-align: center;
+}
+
+.deck-stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.deck-stat-label {
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.progress-ring {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.ring-circle {
+  fill: none;
+  stroke-width: 3;
+}
+
+.ring-bg {
+  stroke: var(--border-light);
+}
+
+.ring-progress {
+  stroke: var(--primary);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.deck-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn {
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--duration) ease;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: scale(1.02);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+}
+
+.btn-secondary:hover {
+  background: var(--border-light);
+}
+
+.btn-icon {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--border-light);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--duration) ease;
+}
+
+.btn-icon:hover {
+  background: var(--bg-secondary);
+  border-color: var(--primary);
+}
+
+/* ===== STUDY MODE ===== */
+.study-container {
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeIn 0.3s ease;
+}
+
+.study-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.study-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.study-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 4px;
+  background: var(--border-light);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 0 1.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 999px;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* Flashcard */
+.flashcard {
+  aspect-ratio: 16 / 10;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  perspective: 1200px;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 2rem;
+  transition: all var(--duration) ease;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg);
+}
+
+.flashcard:hover {
+  transform: translateY(-8px) rotateX(0deg);
+  box-shadow: var(--shadow-xl);
+}
+
+.flashcard.flipped {
+  background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+}
+
+.flashcard-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-tertiary);
+  margin-bottom: 1rem;
+}
+
+.flashcard-content {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.flashcard-hint {
+  position: absolute;
+  bottom: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+/* Confidence buttons */
+.confidence-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.confidence-btn {
+  padding: 1rem;
+  border: 1.5px solid var(--border-light);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--duration) ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: inherit;
+}
+
+.confidence-btn:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+.confidence-btn.again {
+  border-color: var(--error);
+}
+
+.confidence-btn.again:hover {
+  background: var(--error-light);
+  border-color: var(--error);
+}
+
+.confidence-btn.hard {
+  border-color: var(--warning);
+}
+
+.confidence-btn.hard:hover {
+  background: var(--warning-light);
+  border-color: var(--warning);
+}
+
+.confidence-btn.good {
+  border-color: var(--primary);
+}
+
+.confidence-btn.good:hover {
+  background: #EFF6FF;
+  border-color: var(--primary);
+}
+
+.confidence-btn.easy {
+  border-color: var(--success);
+}
+
+.confidence-btn.easy:hover {
+  background: var(--success-light);
+  border-color: var(--success);
+}
+
+.confidence-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.confidence-interval {
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+}
+
+/* Controls */
+.study-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  gap: 1rem;
+}
+
+.control-left {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.control-shortcuts {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.kbd {
+  padding: 0.25rem 0.5rem;
+  background: var(--bg-secondary);
+  border-radius: 3px;
+  border: 1px solid var(--border-light);
+  font-family: 'Monaco', 'Courier', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+/* ===== RESULTS ===== */
+.results-screen {
+  text-align: center;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.results-score {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.results-status {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: var(--success-light);
+  color: var(--success);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+}
+
+.results-description {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.results-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== ACHIEVEMENT BADGES ===== */
+.achievements {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.badge-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--warning-light) 0%, var(--success-light) 100%);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+}
+
+.badge-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease;
+}
+
+.modal {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: var(--shadow-xl);
+  animation: slideUp 0.3s ease;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.modal-description {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flip {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(180deg); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+
+  .header-inner {
+    padding: 0 1rem;
+  }
+
+  .dashboard-title {
+    font-size: 1.5rem;
+  }
+
+  .quick-actions {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .decks-container {
+    grid-template-columns: 1fr;
+  }
+
+  .confidence-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .flashcard {
+    padding: 2rem;
+    aspect-ratio: auto;
+    min-height: 300px;
+  }
+
+  .flashcard-content {
+    font-size: 1.25rem;
+  }
+
+  .study-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .control-shortcuts {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .decks-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== UTILITY ===== */
+.hidden {
+  display: none;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@supports (background: oklch(0% 0 0)) {
+  :root {
+    --primary: #2563EB;
+  }
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="header-inner">
+      <a class="logo" onclick="navigate('dashboard')">
+        <div class="logo-icon">📚</div>
+        <span>CPRE Study <strong style="color:#2563EB">Pro</strong></span>
+      </a>
+      <nav class="nav">
+        <button class="nav-btn active" id="nav-dashboard" onclick="navigate('dashboard')">Dashboard</button>
+        <button class="nav-btn" id="nav-progress" onclick="navigate('progress')">Progress</button>
+        <button class="nav-btn" id="nav-stats" onclick="navigate('stats')">Stats</button>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" onclick="toggleDarkMode()" title="Toggle dark mode">🌙</button>
+        <button class="icon-btn" onclick="showSettings()" title="Settings">⚙️</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main"></main>
+</div>
+
+<div id="modal-root"></div>
+
+<script>
+'use strict';
+
+/* =====================================================================
+   DATA & STATE (All 7 IREB Chapters with 83 Flashcards & 63 Quiz Questions)
+===================================================================== */
+const DATA = {chapters:[
+{id:"ch1",number:1,title:"The Role and Tasks of a Requirements Engineer",
+ subchapters:[
+  {id:"ch1-1",title:"What is Requirements Engineering?",flashcards:[
+    {id:"ch1-1-f1",front:"Define: Requirement",back:"A requirement is:\n1. A need perceived by a stakeholder.\n2. A capability or property a system shall have.\n3. A documented representation of a need or condition."},
+    {id:"ch1-1-f2",front:"What is Requirements Engineering (RE)?",back:"A systematic and disciplined approach to the development and management of requirements. It covers elicitation, documentation, validation, and management of requirements throughout the system lifecycle."},
+    {id:"ch1-1-f3",front:"What are the three dimensions of the RE triangle?",back:"1. Content – the substance of requirements (what the system shall do)\n2. Documentation – how requirements are recorded\n3. Agreement – consensus among stakeholders\n\nAll three must be satisfied for effective RE."},
+    {id:"ch1-1-f4",front:"What does 'scope creep' mean in RE?",back:"The addition of requirements beyond the defined scope of the project — often incremental and uncontrolled. It is a major risk to project schedule and budget and must be managed through rigorous change control."},
+  ]},
+  {id:"ch1-2",title:"Goals and Role of the RE",flashcards:[
+    {id:"ch1-2-f1",front:"What are the primary goals of Requirements Engineering?",back:"1. Identify all relevant stakeholders and their needs.\n2. Elicit all relevant requirements.\n3. Document requirements precisely and unambiguously.\n4. Validate requirements with stakeholders.\n5. Manage requirements throughout the project lifecycle."},
+    {id:"ch1-2-f2",front:"Why is RE important for project success?",back:"Defects introduced during RE are among the most expensive to fix. Poor requirements are a primary cause of project failure. Good RE reduces rework, clarifies scope, aligns expectations, and forms the foundation for testing."},
+    {id:"ch1-2-f3",front:"What core skills does a Requirements Engineer need?",back:"• Analytical thinking\n• Communication and facilitation\n• Empathy and stakeholder orientation\n• Creativity (for elicitation)\n• Conflict resolution / moderation\n• Domain and methodological knowledge\n\nNote: Without communication skills, the RE role collapses even with technical knowledge."},
+    {id:"ch1-2-f4",front:"What is the relationship between a Requirements Engineer and a Tester (stakeholder)?",back:"The Requirements Engineer delivers INPUT to the tester. The tester uses requirements as the basis for test cases. Requirements must therefore be verifiable and traceable.\n\n(RE → input for tester, not the other way around.)"},
+  ]},
+ ],
+ quiz:[
+  {id:"ch1-q1",question:"Which of the following best describes the role of a Requirements Engineer?",options:["To define the system architecture and select technologies","To elicit, document, validate, and manage requirements throughout the project lifecycle","To write test cases and verify that software meets requirements","To manage project schedule and resource allocation"],correctIndex:1,explanation:"The RE's core responsibility covers all stages: elicitation, documentation, validation, and management. Architecture and testing are separate disciplines."},
+  {id:"ch1-q2",question:"A requirements engineer is introverted and has no knowledge of requirements elicitation and documentation. This represents the greatest risk because:",options:["Domain knowledge is most important for an RE","Communication and elicitation skills are core to the RE role","Project management training is mandatory","Knowledge of military ranks is essential"],correctIndex:1,explanation:"An RE without communication/elicitation skills cannot effectively gather stakeholder needs — this is a fundamental gap. Domain knowledge can be acquired, but interpersonal skills are harder to substitute."},
+  {id:"ch1-q3",question:"Which statement best characterises the relationship between a Requirements Engineer and a stakeholder in the role of a tester?",options:["The requirements engineer delivers input for the work of the tester","The tester delivers input for the requirements engineer","The tester monitors the requirements engineer","The work of the RE is not related to the tester role"],correctIndex:0,explanation:"The RE produces requirements that serve as INPUT for the tester's test planning and test cases. Information flows from RE to tester."},
+  {id:"ch1-q4",question:"What is the THREE-dimension IREB 'magic triangle' of RE?",options:["Scope, budget, schedule","Elicitation, specification, validation","Content, documentation, agreement","Functional requirements, non-functional requirements, constraints"],correctIndex:2,explanation:"IREB defines RE through Content (what), Documentation (how recorded), and Agreement (consensus). All three must be balanced."},
+  {id:"ch1-q5",question:"What is 'scope creep'?",options:["The natural progression as a project's scope is formally defined","An evil monster waiting to destroy your project","The addition of requirements beyond the defined project scope","A failure to define the system context"],correctIndex:2,explanation:"Scope creep is the uncontrolled addition of features or requirements beyond what was originally agreed. It threatens schedule and budget and must be managed through change control."},
+ ]
+},
+{id:"ch2",number:2,title:"Fundamental Principles of Requirements Engineering",
+ subchapters:[
+  {id:"ch2-1",title:"Stakeholders",flashcards:[
+    {id:"ch2-1-f1",front:"Define: Stakeholder",back:"A person or group who:\n• Has a direct or indirect influence on system requirements, OR\n• Is affected by the system or its development\n\nExamples: end users, customers, developers, regulators, maintenance staff, system operators."},
+    {id:"ch2-1-f2",front:"Which two pieces of information should always be recorded in the stakeholder list?",back:"B. Role designation\nC. Length of service / experience\n\n(Other common attributes: importance/influence, contact info, goals — but role and experience are minimum basics per IREB exam questions.)"},
+    {id:"ch2-1-f3",front:"What is the difference between a stakeholder and a user?",back:"A user directly interacts with the system at runtime. A stakeholder is broader — it includes users, customers, sponsors, regulators, maintenance staff, and anyone else affected by or influencing the system.\n\nEvery user is a stakeholder, but not every stakeholder is a user."},
+    {id:"ch2-1-f4",front:"When should stakeholders be involved in a project?",back:"Throughout the ENTIRE project — from requirements elicitation through design, implementation, testing, and deployment.\n\nLate stakeholder involvement is a major source of requirements defects and rework."},
+  ]},
+  {id:"ch2-2",title:"Types of Requirements",flashcards:[
+    {id:"ch2-2-f1",front:"What is a functional requirement?",back:"A requirement that describes a FUNCTION or BEHAVIOR the system must perform — WHAT the system shall do.\n\nExample: 'The system shall allow a user to log in with a username and password.'"},
+    {id:"ch2-2-f2",front:"What is a non-functional requirement (NFR)?",back:"A requirement describing a QUALITY ATTRIBUTE or CONSTRAINT on HOW the system performs its functions.\n\nExamples: performance, usability, reliability, security, maintainability, portability.\n\nAlso called quality requirements or Quality of Service (QoS) requirements."},
+    {id:"ch2-2-f3",front:"What is a constraint?",back:"A requirement that LIMITS design or implementation choices WITHOUT describing system behavior.\n\nExamples:\n• 'Must be implemented in Java'\n• 'Must comply with GDPR'\n• 'Budget is fixed at €500k'\n• 'Must run on existing hardware'"},
+    {id:"ch2-2-f4",front:"What are Quality of Service (QoS) requirements a subset of?",back:"Non-functional requirements (NFRs).\n\nQoS includes: performance, availability, reliability, scalability, security. All describe HOW WELL the system works, not WHAT it does."},
+    {id:"ch2-2-f5",front:"'Restrictions or limitations on the solutions' — which term does this define?",back:"Constraint.\n\nConstraints do not describe desired system behaviour; they restrict the solution space available to designers. They are one of the three IREB requirement categories (functional / quality / constraints)."},
+  ]},
+  {id:"ch2-3",title:"Quality Criteria for Requirements",flashcards:[
+    {id:"ch2-3-f1",front:"Name the key quality criteria for an INDIVIDUAL requirement.",back:"• Unambiguous – only one interpretation possible\n• Correct – accurately reflects stakeholder need\n• Understandable – clear to all intended readers\n• Consistent – no contradictions\n• Verifiable / Testable – can be checked\n• Necessary – represents a real need\n• Feasible – technically and economically achievable\n• Traceable – linked to its origin"},
+    {id:"ch2-3-f2",front:"Name the key quality criteria for a REQUIREMENTS SET (specification).",back:"• Complete – all relevant requirements included\n• Consistent – no contradictions between requirements\n• Unambiguous – all requirements have one interpretation\n• Prioritised – requirements ordered by importance\n• Modifiable and extensible – structured to allow updates\n• Traceable – requirements linked to sources and artefacts"},
+    {id:"ch2-3-f3",front:"What is requirements traceability?",back:"The ability to follow the life of a requirement in BOTH directions:\n• Forward: requirements → design → implementation → tests\n• Backward: tests/implementation → requirements → stakeholder needs\n\nSupports impact analysis, verification coverage, and change management."},
+    {id:"ch2-3-f4",front:"Why does uniqueness matter when analysing functional requirements?",back:"If a requirement is stated in multiple places, it is easy to update one copy and not the others, creating inconsistency. Unique requirements (stated once) are easier to maintain, trace, and change correctly."},
+  ]},
+  {id:"ch2-4",title:"System and System Context",flashcards:[
+    {id:"ch2-4-f1",front:"What is the system context?",back:"The part of the system's environment that is RELEVANT to the system's requirements. It includes external entities (people, other systems, hardware) that interact with the system.\n\nElements outside the context are irrelevant to requirements."},
+    {id:"ch2-4-f2",front:"What is the difference between the system boundary and the context boundary?",back:"• System boundary: separates what IS the system (inside = built) from the context (outside = existing)\n• Context boundary: separates the system context (relevant environment) from the irrelevant environment\n\nTogether they define scope and what must be considered during RE."},
+    {id:"ch2-4-f3",front:"What is a grey zone in system/context delimitation?",back:"A grey zone is an area of ambiguity where it is unclear:\n• Whether an element belongs INSIDE or OUTSIDE the system boundary (system grey zone), or\n• Whether an element in the environment is RELEVANT or IRRELEVANT (context grey zone)\n\nGrey zones must be resolved or monitored throughout the project."},
+    {id:"ch2-4-f4",front:"A new system (X) will be developed with an interface to legacy system (Y). System Y already has an interface to system (Z). What is Z's context status relative to X?",back:"System Y is in the system X context (it directly interfaces with X).\nSystem Z is in the IRRELEVANT ENVIRONMENT of X — there is no direct relationship between X and Z.\n\nOnly direct relationships define context membership."},
+    {id:"ch2-4-f5",front:"Which diagram is LEAST suited for representing system/context delimitation?",back:"State diagram — it shows states and transitions of an entity over time, NOT the boundary between a system and its environment.\n\nBest tools for delimitation: context diagram with data flows, use case diagram."},
+  ]},
+ ],
+ quiz:[
+  {id:"ch2-q1",question:"Which of the following is an example of a NON-FUNCTIONAL requirement?",options:["The system shall allow users to reset their password via email","The system shall process 1,000 transactions per second under normal load","The system shall display a list of all open orders","The system shall send a confirmation email after a successful purchase"],correctIndex:1,explanation:"Processing 1,000 tx/s is a performance quality attribute — an NFR. The others describe behaviors (functional requirements)."},
+  {id:"ch2-q2",question:"Which statement best characterises the term 'stakeholder'?",options:["External actors and technical interfaces to surrounding systems","Persons and organisations affected by the development and use of the system","Special interest representatives responsible for approving the first project phase","A person responsible for administering the software development environment"],correctIndex:1,explanation:"IREB defines stakeholders as anyone affected by the development and use of the system — not just direct actors or approvers."},
+  {id:"ch2-q3",question:"According to IREB, which of the following is a CONSTRAINT?",options:["The system shall support English and German languages","The system shall be implemented using Java and an Oracle database","The system shall respond to queries within 2 seconds","The system shall authenticate users before allowing access"],correctIndex:1,explanation:"Mandating Java + Oracle constrains the solution space without describing system behaviour — it is a constraint. Language support is functional, 2-second response is an NFR, authentication is functional."},
+  {id:"ch2-q4",question:"Quality of Service (QoS) requirements are a subset of which type?",options:["Functional requirements","Non-functional requirements","Behavioural requirements","Performance requirements only"],correctIndex:1,explanation:"QoS (performance, availability, reliability, security) describes HOW WELL the system works — these are non-functional requirements."},
+  {id:"ch2-q5",question:"'Restrictions or limitations on the solutions' is the definition of:",options:["Interface","Risk","Assumption","Constraint"],correctIndex:3,explanation:"A constraint restricts or limits solution options. It is one of IREB's three requirement categories alongside functional and quality requirements."},
+  {id:"ch2-q6",question:"A new system X is built with an interface to legacy system Y. Y already interfaces with legacy system Z. Regarding system X's context:",options:["Y is in the context; Z is in the grey zone","Both Y and Z are in the grey zone","Both Y and Z are in the context","Y is in the context; Z is in the irrelevant environment"],correctIndex:3,explanation:"Context only includes systems with a DIRECT relationship to X. Y has a direct interface; Z has no direct relationship to X and is therefore irrelevant environment."},
+  {id:"ch2-q7",question:"Which diagram is LEAST suited for representing system/context delimitation?",options:["Class diagram","Use case diagram","State diagram","Context diagram with data flows"],correctIndex:2,explanation:"A state diagram shows states and transitions over time — it does not represent system boundaries. Context/use case diagrams are the natural tools for delimitation."},
+  {id:"ch2-q8",question:"Which quality criterion applies specifically to an INDIVIDUAL requirement (not the specification as a whole)?",options:["Complete","Prioritised","Verifiable","Consistent (across the specification)"],correctIndex:2,explanation:"Verifiability is a per-requirement criterion — each requirement must be checkable. Completeness and Prioritisation apply to the specification as a whole."},
+  {id:"ch2-q9",question:"When should stakeholders be involved in a project?",options:["During requirements elicitation only","Throughout the development phases","During acceptance testing","Throughout the entire project"],correctIndex:3,explanation:"Stakeholder involvement should span the entire project lifecycle. Late or limited involvement is a primary cause of requirements defects discovered downstream."},
+ ]
+},
+{id:"ch3",number:3,title:"Requirements Documentation (Work Products)",
+ subchapters:[
+  {id:"ch3-1",title:"Natural Language Documentation",flashcards:[
+    {id:"ch3-1-f1",front:"What are common problems with natural language requirements?",back:"• Ambiguity – multiple interpretations\n• Vagueness – unclear terms ('fast', 'user-friendly')\n• Incompleteness – missing conditions or edge cases\n• Inconsistency – contradictions between statements\n• Noise – irrelevant information\n• Inappropriate complexity – overly technical detail\n• Nominalisations – hiding verbs as nouns\n• Universal quantifiers without specifics ('always', 'never')"},
+    {id:"ch3-1-f2",front:"What is a boilerplate/sentence-template for natural language requirements?",back:"A SYNTACTICAL BLUEPRINT for a requirement's structure.\n\nFormat: [Subject] shall [verb] [object] [condition]\n\nExample: 'The system shall send a confirmation email to the user after a successful order.'\n\n'Shall' = mandatory; 'should' = recommended; 'may' = optional.\n\nNote: A template defines SYNTAX, not semantics."},
+    {id:"ch3-1-f3",front:"What is the most precise definition of a sentence-template for requirements?",back:"A sentence-template is a BLUEPRINT FOR THE SYNTACTICAL STRUCTURE of an individual requirement.\n\nIt defines HOW a requirement sentence is structured (word order, modal verbs, subject/object roles) — NOT what the requirement means or what values to use."},
+    {id:"ch3-1-f4",front:"What guidelines should be followed when writing a requirements specification?",back:"✅ Good guidelines:\n• Only one requirement per sentence, no nesting\n• Use consistent terminology\n• Use sentence-templates for formulation\n• Use short sentences and paragraphs\n\n❌ Avoid:\n• Minimising headers (structure helps)\n• Italics for legally binding (use a formal marker)\n• 'Interesting' writing style (clarity over style)"},
+    {id:"ch3-1-f5",front:"What is a glossary in RE, and why is it important?",back:"A glossary is a structured list of domain-specific terms with agreed definitions.\n\nBenefits:\n• Prevents misunderstandings from homonyms/synonyms\n• Establishes ONE correct term per concept\n• Required component of a proper requirements specification\n\nIf a term is found to represent two things, update the glossary AND review all affected requirements."},
+  ]},
+  {id:"ch3-2",title:"Model-Based Documentation",flashcards:[
+    {id:"ch3-2-f1",front:"What elements does a use case diagram contain?",back:"Actors, use cases, and associations (relationships between them).\n\n• Actors: people or systems that interact with the system\n• Use cases: functional goals the system fulfils for actors\n• Associations: lines showing which actors participate in which use cases\n\n(NOT objects, messages, or activities — those are sequence/activity diagrams)"},
+    {id:"ch3-2-f2",front:"What is the role of an 'actor' in a use case diagram?",back:"Actors represent PEOPLE AND SYSTEMS that interact with the system under development.\n\nAn actor is EXTERNAL to the system — it is in the system context. Actors can be primary (initiate use cases) or secondary (support use cases)."},
+    {id:"ch3-2-f3",front:"What is the purpose of alternate flows in a use case?",back:"Alternate flows describe paths OTHER THAN the main success scenario.\n\nThey cover:\n• Alternative ways to achieve the goal\n• Exception/error conditions\n\nAlternate flows ensure that realistic deviations from the main path are documented."},
+    {id:"ch3-2-f4",front:"What are the valid class relationships in UML class diagrams?",back:"• Association – general relationship\n• Aggregation – 'has-a' (parts can exist independently)\n• Composition – 'owns-a' (parts cannot exist without whole)\n• Generalisation – inheritance ('is-a')\n• Dependency\n\n'Merge' is NOT a valid UML class relationship."},
+    {id:"ch3-2-f5",front:"What does a Composition relationship in a UML class diagram mean?",back:"A COMPOSITION is a strong form of aggregation where the part CANNOT exist without the whole.\n\nExample: An invoice and its invoice items. If the invoice is deleted, the items cease to exist too.\n\nModelled with a filled diamond at the whole end."},
+    {id:"ch3-2-f6",front:"What are the elements of a state diagram?",back:"• States – conditions the system can be in\n• Transitions – movements between states\n• Events – triggers that cause transitions\n• Guards – conditions that must be true for a transition\n• Actions – activities executed on a transition\n• Initial state (filled circle)\n• Final state (circle with filled circle inside)\n\n(NOT: interaction, actor — those belong to other diagrams)"},
+    {id:"ch3-2-f7",front:"How do you read a state diagram transition label: Payment received [invalid] / error message?",back:"Format: Event [Guard condition] / Action\n\n• Event: 'Payment received' — what triggered the transition\n• Guard: 'invalid' — condition that must be true\n• Action: 'error message' — what happens when transition fires\n\nThis is the standard UML notation for state machine transitions."},
+    {id:"ch3-2-f8",front:"What are the main components of an Entity-Relationship Diagram (ERD)?",back:"Entities, attributes, identifiers (primary keys), and relationships.\n\nERDs model the structural perspective of requirements — the data the system handles and how data entities relate to each other.\n\n(NOT: data + transitions + storage — those are data flow)"},
+    {id:"ch3-2-f9",front:"What is a user story?",back:"Agile format: 'As a [role], I want [goal] so that [benefit].'\n\nCaptures who needs something, what they need, and why. Acceptance criteria are added separately.\n\nUser stories are the PRIMARY requirements technique for user requirements in agile."},
+    {id:"ch3-2-f10",front:"Which perspectives does the requirements model cover?",back:"1. Structural perspective – static structure (class diagrams, ERDs)\n2. Functional/Behavioural perspective – functions and processes (use cases, activity diagrams, DFDs)\n3. Dynamic/State perspective – system behaviour over time (state diagrams, sequence diagrams)\n\nA complete model typically covers all three perspectives."},
+  ]},
+  {id:"ch3-3",title:"Documentation Quality and Attributes",flashcards:[
+    {id:"ch3-3-f1",front:"What are requirement attributes used for?",back:"Requirement attributes are properties attached to each requirement to support management. They can include:\n• ID (unique identifier – mandatory)\n• Priority / Importance\n• Criticality\n• Status (draft, approved, implemented)\n• Author / Responsibility\n• Release version for implementation\n• Legal binding status\n\nAll of these can be valid requirement attributes."},
+    {id:"ch3-3-f2",front:"Why must every requirement have a unique identifier?",back:"A unique ID allows:\n• Traceability (linking to design, tests)\n• Unambiguous change management\n• Referencing in reviews and documents\n• Impact analysis when requirements change\n\nIDs should NOT change during the project."},
+    {id:"ch3-3-f3",front:"Which diagram is LEAST suitable for documenting the details of a single use case?",back:"A context diagram is least suitable — it shows the system boundary and external actors, not the internal flow of an individual use case.\n\nBest for single use case detail:\n• Activity diagram (flow of steps)\n• State diagram (state changes during the use case)\n• Natural language (prose description)"},
+    {id:"ch3-3-f4",front:"What are two structural diagram types used for the structural perspective of requirements?",back:"1. Entity-Relationship Diagram (ERD) — models data entities and relationships\n2. Class Diagram (UML) — models classes, attributes, and relationships\n\nBoth show structure (static). State diagrams and activity diagrams show dynamic behaviour."},
+  ]},
+ ],
+ quiz:[
+  {id:"ch3-q1",question:"What is the recommended modal verb for MANDATORY requirements?",options:["should","may","shall","will"],correctIndex:2,explanation:"'Shall' indicates mandatory requirement. 'Should' = recommended/optional. 'May' = permitted. Consistent use of modal verbs reduces ambiguity in specifications."},
+  {id:"ch3-q2",question:"What is the most precise definition of a sentence-template as used for requirements?",options:["A blueprint for a requirement","A blueprint for the semantic filling of requirement elements","A blueprint for the syntax and semantics of a requirement","A blueprint for the syntactical structure of an individual requirement"],correctIndex:3,explanation:"A sentence-template defines the SYNTACTICAL STRUCTURE only — the word order and roles (subject/verb/object/condition). It does not determine the semantic content or values."},
+  {id:"ch3-q3",question:"Which of the following are good guidelines when writing a requirements specification? (Select the best answer listing correct rules)",options:["Minimize headers; use italics for legally binding requirements; interesting writing style","Only one requirement per sentence; use consistent terminology; use sentence-templates; use short sentences","High quality is guaranteed by using templates; no linguistic effects occur with templates","Sentence templates deliver greater information content and satisfy all quality criteria"],correctIndex:1,explanation:"Good specification writing: one req per sentence, consistent terminology, sentence-templates, short paragraphs. Templates improve structure but don't guarantee quality on their own."},
+  {id:"ch3-q4",question:"A use case diagram's modelling elements are:",options:["Objects, activities and associations","Actors, messages and activities","Objects, use cases and activities","Actors, use cases and associations"],correctIndex:3,explanation:"Use case diagrams show ACTORS (external parties), USE CASES (goals), and ASSOCIATIONS (participation links). Objects and messages belong to sequence/class diagrams."},
+  {id:"ch3-q5",question:"Which is NOT a valid class relationship in a UML class diagram?",options:["Composition","Merge","Aggregation","Association"],correctIndex:1,explanation:"'Merge' is not a UML class diagram relationship. Valid class relationships include: Association, Aggregation, Composition, Generalisation, and Dependency."},
+  {id:"ch3-q6",question:"What are the elements of a state diagram?",options:["Event, initial state, state transition, interaction, actor","Event, initial state, state transition","Objects, activities, guards, messages","States, actors, use cases, transitions"],correctIndex:1,explanation:"State diagram elements: Event (trigger), Initial state, State transition. 'Interaction' and 'actor' belong to sequence/use case diagrams."},
+  {id:"ch3-q7",question:"In a state diagram transition label 'Payment received [invalid] / error message', what is the action?",options:["Payment received","invalid","error message","This notation is incorrect"],correctIndex:2,explanation:"Format is: Event [Guard] / Action. 'Payment received' = event, 'invalid' = guard condition, 'error message' = action taken when transition fires."},
+  {id:"ch3-q8",question:"What are the main components of an Entity-Relationship Diagram (ERD)?",options:["Entities, attributes, identifiers and relationships","Attributes and methods","Data, transitions, storage","Database tables and fields"],correctIndex:0,explanation:"ERDs contain entities (things), attributes (properties), identifiers (keys), and relationships (how entities connect). Methods belong to class diagrams."},
+  {id:"ch3-q9",question:"Why is maintaining a project glossary important in RE?",options:["It replaces the need for requirements specifications","It establishes the one correct term to be used, preventing homonym/synonym confusion","It is legally required for all software projects","It documents the technical architecture"],correctIndex:1,explanation:"A glossary prevents misunderstandings by defining each term exactly once. It eliminates the ambiguity caused by synonyms (two words, same meaning) and homonyms (one word, two meanings)."},
+  {id:"ch3-q10",question:"Which diagram type is LEAST suitable for documenting the details of a single use case?",options:["State diagram","Activity diagram","Natural language","Context diagram"],correctIndex:3,explanation:"A context diagram shows the SYSTEM BOUNDARY and external actors — it cannot document the internal steps of a single use case. Activity/state diagrams and natural language are suitable."},
+  {id:"ch3-q11",question:"Which statement about natural language (NL) documentation is WRONG?",options:["NL is easy to use and generally understandable by non-technical users","NL can be non-specific and words can have multiple interpretations","Models can portray complex information compactly and are harder to review for completeness","Models may require expertise to understand and may not be suitable for non-technical readers"],correctIndex:2,explanation:"Statement C is wrong: models can portray complex information compactly, but they are NOT necessarily harder to review for completeness — that depends on the model type and domain."},
+  {id:"ch3-q12",question:"What structural diagram types are used for the STRUCTURAL perspective in requirements modelling?",options:["State diagram and activity diagram","Entity-relationship diagram and class diagram","Use case diagram and sequence diagram","Data flow diagram and state diagram"],correctIndex:1,explanation:"Structural perspective: ERDs (data structure) and class diagrams (object structure). State and activity diagrams show dynamic behaviour; use case diagrams show functional perspective."},
+ ]
+},
+{id:"ch4",number:4,title:"Requirements Elicitation, Negotiation, and Validation",subchapters:[{id:"ch4-1",title:"Elicitation Techniques",flashcards:[{id:"ch4-1-f1",front:"What is the difference between 'collecting' and 'eliciting' requirements?",back:"'Collection' implies requirements already exist and just need gathering.\n\n'Elicitation' acknowledges that requirements are often TACIT, CONFLICTING, or INCOMPLETE — they must be actively DISCOVERED, CLARIFIED, and CONSTRUCTED through collaboration with stakeholders."},{id:"ch4-1-f2",front:"Name the main categories of elicitation techniques.",back:"1. Interview-based: structured/unstructured interviews, questionnaires\n2. Creativity: brainstorming, 635 method, perspective-based reading\n3. Document-centric: document analysis, legacy system analysis (system archaeology)\n4. Observation-based: field observation, apprenticing, ethnography\n5. Workshop-based: requirements workshops, focus groups, JAD sessions\n6. Prototyping: UI mockups, evolutionary prototypes"},{id:"ch4-1-f3",front:"What is brainstorming used for in RE, and when is it most suitable?",back:"Brainstorming generates many ideas quickly in a group. Rules: no criticism during generation, quantity over quality, build on others' ideas.\n\nBest with: informal, creative groups who respect each other.\nNot best for: eliciting from large user groups or clarifying boundaries."},{id:"ch4-1-f4",front:"What is field observation / apprenticing / ethnography?",back:"Observing users in their ACTUAL WORK ENVIRONMENT without interfering.\n\nReveals TACIT KNOWLEDGE — things users do naturally but cannot articulate in an interview. Uncovers real (vs. reported) work practices.\n\nBest for: critical systems where usability/context matters (e.g., ICU medical systems)."},{id:"ch4-1-f5",front:"What is interface analysis used for in elicitation?",back:"Interface analysis identifies and clarifies the BOUNDARIES of the system — what data, events, and interactions cross the system boundary.\n\nBest technique for: clarifying system interfaces and boundaries, understanding all inputs/outputs.\n\nAll interface changes can affect the system and must therefore all be defined."},{id:"ch4-1-f6",front:"What is system archaeology / reverse-engineering?",back:"Analysing an existing legacy system (code, documents, or decompilation) to recover undocumented requirements.\n\nUsed when: there is no documentation and original developers have left.\n\nReverse-engineering of code can recover requirements but has legal/copyright considerations."},{id:"ch4-1-f7",front:"What is the Kano model in RE?",back:"Classifies requirements into 3 groups:\n• Must-be (basic/standard) – absence causes dissatisfaction; presence is expected\n• Performance (one-dimensional) – LINEAR relationship: more = more satisfaction\n• Excitement (attractive) – unexpected; absence is OK but presence DELIGHTS\n\nUseful for prioritisation and discovering hidden needs."}]},{id:"ch4-2",title:"Negotiation and Conflict Resolution",flashcards:[{id:"ch4-2-f1",front:"What types of conflicts arise in requirements, and which can the RE best handle?",back:"Types: Data, Interest, Value, Relationship, Structural/Architectural conflicts.\n\nRE can best handle: SUBJECT MATTER (data/interest/value) conflicts through facilitation and negotiation.\n\nRE is LEAST suited for: Architectural conflicts (technical) and Cost conflicts (management decisions)."},{id:"ch4-2-f2",front:"How should a Requirements Engineer handle conflicts in projects?",back:"BEST approach:\n1. Analyse the conflict\n2. Try to bring about a solution with a suitable technique\n3. Document relevant information about the conflict and resolution\n\nDO NOT: ignore it, escalate immediately, or impose a decision unilaterally."},{id:"ch4-2-f3",front:"What does MoSCoW stand for in prioritisation?",back:"• Must have – critical; project fails without it\n• Should have – important but not critical\n• Could have – nice to have if resources allow\n• Won't have (this time) – explicitly out of scope for THIS release (not rejected permanently)\n\nThe 'o's in MoSCoW have no meaning — just to make it pronounceable."},{id:"ch4-2-f4",front:"Which criterion is NOT a sensible criterion for prioritising requirements?",back:"The EFFORT for VALIDATION of requirements is NOT a good prioritisation criterion.\n\nGood criteria include: business impact, risk, cost of implementation, dependency on other requirements, legal/regulatory obligation, release planning.\n\n(Exam question: option C — validation effort — was the wrong criterion.)"}]},{id:"ch4-3",title:"Requirements Validation",flashcards:[{id:"ch4-3-f1",front:"What is requirements validation?",back:"Checks that the documented requirements CORRECTLY AND COMPLETELY REFLECT STAKEHOLDER NEEDS.\n\n→ 'Are we building the RIGHT system?'\n\nDiffers from verification: 'Are we building it RIGHT?' (implementation vs. requirements).\n\nValidation is done DURING RE; verification is done DURING testing."},{id:"ch4-3-f2",front:"What techniques are used for requirements validation?",back:"• Reviews / Inspections – structured examination by reviewers\n• Walkthroughs – author presents, reviewers respond\n• Prototyping – stakeholders react to a mockup\n• Test-case derivation – try to write tests; impossible test = unverifiable req\n• Perspective-based reading – reviewers adopt different roles (user/tester/developer)\n• Simulation / animation of models\n\nNOT elicitation techniques: field observation, stakeholder analysis."},{id:"ch4-3-f3",front:"What is the difference between validation and verification?",back:"• Validation: Are we building the RIGHT system? (Requirements vs. stakeholder needs)\n• Verification: Are we building the system RIGHT? (Implementation vs. requirements)\n\nValidation is performed by Requirements Engineers (with stakeholders).\nVerification is performed by testers/QA against documented requirements."},{id:"ch4-3-f4",front:"Which validation technique identifies unverifiable requirements?",back:"TEST-CASE DERIVATION: attempting to write test cases for each requirement.\n\nIf a test case cannot be written, the requirement is not verifiable — revealing ambiguity, vagueness, or missing detail.\n\nThis is a powerful technique for identifying poor-quality requirements during review."}]}],quiz:[{id:"ch4-q1",question:"A new system for monitoring vital functions of ICU patients is being developed. Which two techniques are BEST suited to identifying user requirements for this high-stakes, time-pressured environment?",options:["Questionnaires/interviews and brainstorming","Questionnaires/interviews and role playing","Field surveys and system archaeology","Brainstorming and document analysis"],correctIndex:1,explanation:"For a critical, time-pressured environment: Interviews gather explicit requirements; Role playing lets stakeholders simulate real scenarios. Field observation (apprenticing) would also be valid but wasn't in options."},{id:"ch4-q2",question:"Which elicitation technique involves a RE observing users in their actual work environment without interfering?",options:["Structured interview","Brainstorming","Field observation (ethnography/apprenticing)","Document analysis"],correctIndex:2,explanation:"Field observation / ethnography involves passive observation in the natural work environment. It reveals tacit knowledge — things users do but cannot articulate."},{id:"ch4-q3",question:"According to the Kano model, the 'performance' category has which characteristic?",options:["Absence causes dissatisfaction; presence is expected","Almost LINEAR relationship between satisfaction and degree of compliance","Delights when present; no dissatisfaction when absent","Represents regulatory compliance features"],correctIndex:1,explanation:"Performance attributes have a linear relationship: the more the system delivers this attribute, the more satisfied users are. Basic attributes have a threshold effect; excitement attributes have a non-linear delight effect."},{id:"ch4-q4",question:"Which of the following is the CORRECT Kano model grouping of requirements?",options:["Must, Should, Could","Necessary, Optional, Fun","Low, Medium, High Priority","Standard/Base, Performance, Excitement"],correctIndex:3,explanation:"IREB Kano model: Standard/Basic (must-be), Performance (one-dimensional, linear), Excitement (attractive). These correspond to different shapes of the satisfaction curve."},{id:"ch4-q5",question:"You have a creative group of stakeholders who get along well and communicate informally. Which elicitation technique works BEST?",options:["Brainstorming","Closed-ended interview questions","Open-ended interview questions","Survey/questionnaire"],correctIndex:0,explanation:"Brainstorming works best with collaborative, informal, creative groups. It leverages group creativity and idea-building. Questionnaires suit large, dispersed user groups."},{id:"ch4-q6",question:"You must elicit requirements from a LARGE group of potential users quickly, with LIMITED time. Which technique is best?",options:["Closed-ended questionnaire","Closed-ended interview","Brainstorming","Prototyping"],correctIndex:0,explanation:"Closed-ended questionnaires can be distributed to large numbers of users simultaneously and compiled quickly. Brainstorming and prototyping work best with smaller groups."},{id:"ch4-q7",question:"You need to elicit, analyse, AND document requirements in ONE session. Which technique works best?",options:["Brainstorming","Requirements workshop","Perspective-based reading","Open-ended interviews"],correctIndex:1,explanation:"A Requirements Workshop (e.g., JAD session) brings stakeholders and analysts together to elicit, analyse, and document requirements collaboratively in a structured session."},{id:"ch4-q8",question:"Which technique is LEAST suitable when you need feature ideas from potential customers for a NEW product?",options:["Change of perspective","Brainstorming","System archaeology","Analogy technique"],correctIndex:2,explanation:"System archaeology analyses EXISTING legacy systems for undocumented requirements. It cannot discover new customer feature ideas — those require creativity techniques or interviews."},{id:"ch4-q9",question:"Which technique is best for clarifying system BOUNDARIES and INTERFACES?",options:["Interface analysis","Closed-ended interview","Brainstorming","Mind-mapping"],correctIndex:0,explanation:"Interface analysis systematically identifies all interfaces between the system and its environment — the primary technique for clarifying system boundaries and data flows."},{id:"ch4-q10",question:"Developers decompile legacy code to recover requirements (no docs exist). Which technique is this?",options:["Interface analysis","Stakeholder analysis","Reverse-engineering","This cannot be a valid RE technique"],correctIndex:2,explanation:"Reverse-engineering (system archaeology) recovers requirements from existing code or artefacts. It is a valid elicitation technique for legacy systems where no documentation exists."},{id:"ch4-q11",question:"Which conflicts are LEAST suitable for the Requirements Engineer to handle?",options:["Subject matter conflict and value conflict","Value conflict and interest conflict","Architectural conflict and cost conflict","Data conflict and relationship conflict"],correctIndex:2,explanation:"Architectural conflicts require technical expertise beyond RE scope; cost conflicts are management decisions. RE is best suited for subject matter, data, interest, value, and relationship conflicts."},{id:"ch4-q12",question:"In a validation meeting two stakeholders debate a requirement. One says success depends on it; the other says it is technically impossible. What is the BEST response?",options:["Note both arguments and let the project manager decide","Invite all stakeholders to a workshop","Prefer the technical opinion since the discussion is pointless if unrealizable","Get together with the affected stakeholders and attempt to reach an agreement"],correctIndex:3,explanation:"The RE should facilitate resolution with the directly affected stakeholders. Escalating immediately to the PM or ignoring the technical concern are not the first steps."},{id:"ch4-q13",question:"How should a Requirements Engineer handle conflicts BEST?",options:["Resolve with the best available technique","Analyse the conflict, try a suitable resolution technique, document information about the conflict and resolution","Ignore it — this is project management's job","Immediately escalate via defined escalation paths"],correctIndex:1,explanation:"Best practice: Analyse → Apply a suitable technique → Document. Immediate escalation or avoidance misses the RE's facilitation role."},{id:"ch4-q14",question:"Which requirement validation techniques are suitable? (Choose the CORRECT set)",options:["Stakeholder analysis, walkthrough, ranking, monitoring","Walkthrough, validation by interface prototype, perspective-based reading, inspection","Decomposition, apprenticing, generalization, visualization","Brainstorming, field observation, interviews, prototyping"],correctIndex:1,explanation:"IREB validation techniques: Walkthroughs, Inspections, Prototyping (interface prototype), Perspective-based reading, Test-case derivation. Brainstorming/field observation are ELICITATION techniques."},{id:"ch4-q15",question:"Which criterion is NOT a sensible criterion for requirements PRIORITISATION?",options:["Impact on the existing operational system","Influence on overall business success","Effort for the VALIDATION of the requirements","Costs resulting from the implementation"],correctIndex:2,explanation:"Validation effort is NOT a prioritisation criterion — requirements should be prioritised by business value, risk, cost of implementation, and dependencies, not by how easy they are to validate."},{id:"ch4-q16",question:"What is the CORRECT distinction between validation and verification?",options:["Validation checks implementation vs. requirements; verification checks requirements vs. needs","Validation checks requirements vs. stakeholder needs; verification checks implementation vs. requirements","They are synonymous","Validation is done by testers; verification is done by REs"],correctIndex:1,explanation:"Validation: 'Building the right thing?' (requirements vs. needs). Verification: 'Building it right?' (implementation vs. requirements). This distinction is fundamental in IREB."}]
+},
+{id:"ch5",number:5,title:"RE Process and Process Models",subchapters:[{id:"ch5-1",title:"RE Core Activities",flashcards:[{id:"ch5-1-f1",front:"What are the four core activities of RE?",back:"1. Elicitation – discovering and gathering requirements\n2. Documentation – recording requirements (text and models)\n3. Validation & Negotiation – checking with stakeholders, resolving conflicts\n4. Management – handling changes, traceability, versioning throughout lifecycle\n\nIn practice these are ITERATIVE and INTERLEAVED, not strictly sequential."},{id:"ch5-1-f2",front:"What are the goals of the requirements ELICITATION process?",back:"Goals (IREB):\n• Get the best input to the requirements possible (II)\n• Produce complete, clear, correct, and consistent requirements (III)\n• Extract the customer's true needs (V)\n\nNOT goals of elicitation: completing the project on budget (I), involving testers early (IV) — these are project management activities."},{id:"ch5-1-f3",front:"What is the best DEFINITION of the elicitation process?",back:"'Methods by which the requirements are CHARACTERISED and REFINED.'\n\nElicitation is not just about gathering use cases or documenting — it is the process of discovering, characterising, and refining what the system must do through interaction with stakeholders."}]},{id:"ch5-2",title:"RE in Different Process Models",flashcards:[{id:"ch5-2-f1",front:"How does RE differ in waterfall vs. agile projects?",back:"Waterfall: RE is an upfront phase producing COMPLETE SPECIFICATIONS before design begins. Changes are formally controlled and costly.\n\nAgile: RE is CONTINUOUS and distributed across iterations (sprints). Requirements are a product backlog, refined gradually via user stories.\n\nBoth require all four RE core activities — just with different rhythm."},{id:"ch5-2-f2",front:"What is a product backlog in agile RE?",back:"An ORDERED LIST of all requirements, features, and improvements desired for the product.\n\n• Maintained by the Product Owner\n• Prioritised by business value\n• Refined before each sprint\n• Single source of truth for what needs to be built\n\nReplaces the traditional SRS in agile contexts."},{id:"ch5-2-f3",front:"What is scope creep, and what causes it?",back:"Scope creep = addition of requirements BEYOND the defined scope, often incrementally.\n\nCauses: insufficient initial scoping, stakeholder pressure, no change control process, poor requirements baseline management.\n\nAn analyst SHOULD plan for scope changes because the realities of the business may cause legitimate scope evolution."}]},{id:"ch5-3",title:"Problem Space vs. Solution Space",flashcards:[{id:"ch5-3-f1",front:"What is the problem space in RE, and why does it matter?",back:"The problem space describes the CURRENT SITUATION, stakeholder needs, and problems to be solved — WITHOUT defining how they will be solved.\n\nRE should first thoroughly understand the problem space. Jumping to solutions too early leads to:\n• Solving the wrong problem\n• Missing important requirements\n• Premature design constraints"},{id:"ch5-3-f2",front:"Why is it important to plan for scope changes in requirements analysis?",back:"Because the REALITIES OF THE BUSINESS may cause legitimate change to scope over time.\n\nNOT because developers or users will randomly add features. A structured change process (not open-ended scope creep) is the right approach — anticipate change and control it."}]}],quiz:[{id:"ch5-q1",question:"Which of the following are TRUE goals of the elicitation process? (Choose best answer)",options:["Complete the project on budget, get the best input, produce complete/correct requirements","Only getting the best possible input","Get best input (II), produce complete/clear/correct requirements (III), extract the customer's true needs (V)","All of: complete on budget, best input, complete requirements, involve testers early, extract true needs"],correctIndex:2,explanation:"Elicitation goals: best input, complete/clear/correct requirements, extracting true needs. 'Complete on budget' is a project management goal. 'Involve testers early' is a broader QA activity."},{id:"ch5-q2",question:"What is the BEST definition of the elicitation process?",options:["Techniques used to document the requirements","The process of gathering use cases, user scenarios and user stories","Diagramming and modelling techniques to characterise requirements","Methods by which requirements are characterised and refined"],correctIndex:3,explanation:"Elicitation is the overall process of discovering, characterising, and REFINING requirements — not just documenting them or creating specific artefacts."},{id:"ch5-q3",question:"In which process model are requirements typically documented completely BEFORE design begins?",options:["Scrum","Extreme Programming (XP)","Waterfall / V-Model","Kanban"],correctIndex:2,explanation:"The Waterfall/V-Model has RE as a distinct upfront phase. Agile methods (Scrum, XP) develop requirements iteratively alongside design and implementation."},{id:"ch5-q4",question:"What is likely to happen if INSUFFICIENT TIME is allocated to requirement gathering?",options:["The project schedule is exceeded due to rework","The project will likely be completed on time since less time is spent on documentation","The technical team will make correct decisions during implementation","Time saved on reviews will create extra time for rework"],correctIndex:0,explanation:"Insufficient RE time leads to incomplete or incorrect requirements, which cause costly rework later. The cost of fixing requirements defects grows exponentially in later phases."},{id:"ch5-q5",question:"Should a requirements analyst plan for scope changes?",options:["No — planning for scope changes acknowledges the scope was not properly set","No — it allows the development team to add more features","Yes — because developers will add features so we should allow for that","Yes — because the realities of the business may cause legitimate scope changes"],correctIndex:3,explanation:"Scope changes should be anticipated and MANAGED, not feared. Business reality evolves; a controlled change process handles legitimate scope evolution. This is different from uncontrolled scope creep."},{id:"ch5-q6",question:"What happens when a requirements source is overlooked?",options:["You hurt the feelings of people not consulted","Requirements may be incomplete or unacceptable","It is not a problem because missed requirements can be added later","Those people should be excluded from acceptance testing"],correctIndex:1,explanation:"Overlooking a requirements source risks incomplete or unacceptable requirements — needs from that source are simply missing from the specification."},{id:"ch5-q7",question:"If a missing requirement is not discovered until USER ACCEPTANCE TEST, what can we conclude?",options:["The analyst should have had more meetings with users","The users didn't communicate effectively","The analysis techniques used were incorrect","The requirements review process was not sufficient"],correctIndex:3,explanation:"A requirement missing until UAT indicates the REVIEW PROCESS failed — validation should have caught this earlier. Defect escape to UAT is a review process failure."}]
+},
+{id:"ch6",number:6,title:"Requirements Management",subchapters:[{id:"ch6-1",title:"Versioning and Baselining",flashcards:[{id:"ch6-1-f1",front:"What is a requirements baseline?",back:"A REVIEWED AND APPROVED SNAPSHOT of requirements at a specific point in time.\n\n• Does NOT freeze requirements permanently\n• Provides a REFERENCE for development and testing\n• Changes after baseline require formal change management\n• Supports impact analysis and traceability"},{id:"ch6-1-f2",front:"What is requirements versioning?",back:"Tracking the HISTORY of requirements over time:\n• Who changed a requirement\n• When they changed it\n• Why (change rationale)\n\nVersioning enables rollback, comparison between versions, and audit trails. It is essential for requirements management under change."}]},{id:"ch6-2",title:"Change Management",flashcards:[{id:"ch6-2-f1",front:"What is the requirements change management process?",back:"1. Submit a change request\n2. Analyse the IMPACT (affected requirements, tests, design, schedule, cost)\n3. Approve or reject (by Change Control Board)\n4. Implement and document the change\n5. Communicate to stakeholders\n\nIMPACT ANALYSIS always comes before approval."},{id:"ch6-2-f2",front:"When analysing a change request, which aspects must be analysed?",back:"• Test cases to be altered due to the change\n• Effort involved in making the change\n• Stakeholders affected by the change\n\nThe JUSTIFICATION of the change is the submitter's responsibility, not the impact analysis.\nImpact analysis focuses on: cost, scope, affected artefacts, affected stakeholders."},{id:"ch6-2-f3",front:"Why must assumptions be documented during requirements analysis?",back:"Because a condition may be TRUE RIGHT NOW but may CHANGE and cause NEGATIVE IMPACT later.\n\nAssumptions that everyone shares today may no longer hold tomorrow. Documenting them enables:\n• Early warning when conditions change\n• Clear distinction between facts and assumptions\n• Traceability of requirement rationale"},{id:"ch6-2-f4",front:"A rule of requirements prioritisation that is TRUE:",back:"PRIORITIES MAY CHANGE during the project.\n\nOther facts:\n• Priorities must be set collaboratively (not by developers alone)\n• Stakeholders will NOT always agree on priorities\n• Priorities ARE necessary — requirements must be ordered\n• Re-prioritisation is a normal part of requirements management"}]},{id:"ch6-3",title:"Traceability",flashcards:[{id:"ch6-3-f1",front:"What are the two directions of requirements traceability?",back:"• Forward traceability: requirements → design → implementation → tests\n  (Every requirement is implemented and tested)\n\n• Backward traceability: tests/implementation → requirements → stakeholder needs\n  (Every artefact is justified by a requirement)\n\nBoth directions are needed for full traceability."},{id:"ch6-3-f2",front:"What is a Requirements Traceability Matrix (RTM)?",back:"A TABLE that maps requirements to their sources, design artefacts, test cases, and other related elements.\n\nColumns example: Req ID | Source | Design ref | Test case ID | Status\n\nThe RTM enables:\n• Coverage verification (is every req tested?)\n• Impact analysis (what changes when this req changes?)\n• Completeness check (are any reqs untested?)"},{id:"ch6-3-f3",front:"Which particular requirement characteristic facilitates test planning after a mid-project scope change?",back:"TRACEABILITY.\n\nWhen the test manager needs to adjust test planning after requirements change, traceability allows them to quickly identify WHICH test cases are linked to WHICH requirements — making it fast to find tests that need updating."}]}],quiz:[{id:"ch6-q1",question:"When a change request is submitted, what should happen FIRST?",options:["The developer should implement the change immediately","The tester should update test cases","An impact analysis should be performed","The requirement should be deleted from the specification"],correctIndex:2,explanation:"Before approving any change, an IMPACT ANALYSIS must determine which requirements, design artefacts, and test cases are affected. This informs the approval/rejection decision."},{id:"ch6-q2",question:"Which aspects must be analysed in a change request impact analysis?",options:["Justification, test cases, effort, and affected stakeholders","Test cases to be altered, effort involved, and stakeholders affected","Only the cost and schedule impact","Only the technical feasibility"],correctIndex:1,explanation:"Impact analysis covers: test cases affected, effort required, and stakeholders impacted. The justification is provided by the change requester, not part of the impact analysis itself."},{id:"ch6-q3",question:"What is the PRIMARY purpose of a requirements baseline?",options:["To freeze requirements permanently so they cannot change","To provide a stable reference snapshot for development and testing","To identify requirements with highest priority","To document the technical architecture"],correctIndex:1,explanation:"A baseline is a snapshot reference point. It enables change management — changes after the baseline are formally controlled. It does NOT prevent all future changes."},{id:"ch6-q4",question:"Forward traceability links requirements to:",options:["Stakeholder goals and business objectives","Design artefacts and test cases","Previous versions of the requirement","Other competing requirements"],correctIndex:1,explanation:"Forward traceability traces from requirements FORWARD to design, implementation, and test cases — ensuring every requirement is addressed and tested."},{id:"ch6-q5",question:"Which traceability characteristic helps a test manager adjust test planning after a scope change mid-project?",options:["Coherence","Testability","Stability","Traceability"],correctIndex:3,explanation:"Traceability links requirements to test cases. When requirements change, the test manager uses traceability to find exactly which tests must be updated — significantly reducing effort."},{id:"ch6-q6",question:"Why must assumptions be clearly documented during requirements analysis?",options:["Everyone will make the same assumptions so they're recorded for review","Constraints may change over time","The huge risks of assumptions must be documented","A condition may be true right now but may change and cause negative impact"],correctIndex:3,explanation:"Assumptions are conditions believed to be true at the time of writing. They must be documented because they CAN CHANGE — when they do, the requirements based on those assumptions must be revisited."},{id:"ch6-q7",question:"Which statement about requirements prioritisation is TRUE?",options:["Stakeholders will always agree on priorities","Priorities must be set by the development group","Priorities are not necessary in agile projects","Priorities may change during the project"],correctIndex:3,explanation:"Priorities evolve as business needs, resources, and timelines change. Re-prioritisation is a normal part of requirements management, not a failure."},{id:"ch6-q8",question:"Your company uses ONLY text processing for requirements management. Which two tasks are LEAST supported?",options:["Version management of requirements and generating result documents","Requirements tracing and creation of graphic models","Documentation of requirements and writing goals","Version management and documentation of requirements"],correctIndex:1,explanation:"Text tools support documentation but lack: Requirements tracing (linking reqs to design/tests) and Creation of graphic models (diagrams). These require dedicated RM tools."}]
+},
+{id:"ch7",number:7,title:"Tool Support for RE",subchapters:[{id:"ch7-1",title:"Categories of RE Tools",flashcards:[{id:"ch7-1-f1",front:"What categories of tools support Requirements Engineering?",back:"1. Requirements management tools (RMTs) – store, version, trace, manage (e.g., IBM DOORS, Jira, codeBeamer)\n2. Modelling tools – UML/SysML (e.g., Enterprise Architect)\n3. Collaboration tools – wikis, whiteboards (e.g., Confluence, Miro)\n4. Prototyping tools – UI mockups (e.g., Figma, Balsamiq)\n5. Testing tools – linking requirements to test cases"},{id:"ch7-1-f2",front:"What features should a Requirements Management Tool (RMT) provide?",back:"• Structured storage of requirements with attributes (ID, status, priority, author)\n• Version control and history tracking\n• Traceability management\n• Change management workflows and approval\n• Export/import in standard formats\n• Search and filter\n• Integration with development and testing tools\n• Reporting and metrics\n\nKey: TRACING and VERSION MANAGEMENT are NOT well-supported by text processors."},{id:"ch7-1-f3",front:"For UML modelling tools to support TRACEABLE models in RE, they must:",back:"A. Store model elements under VERSION CONTROL\nC. Export models in XML format (for tool integration)\nE. Allow model elements to be LINKED VIA HYPERLINKS (for traceability)\n\nNOT sufficient alone: checking UML conformance (B), creating management reports (F), or having IDs without linking (D)."}]},{id:"ch7-2",title:"Tool Evaluation and Selection",flashcards:[{id:"ch7-2-f2",front:"What are potential risks of using RE tools?",back:"• Tool becomes an end in itself (bureaucracy over substance)\n• Vendor lock-in from proprietary formats\n• High learning curve slowing adoption\n• FALSE SENSE OF QUALITY — a tool doesn't automatically improve requirements\n• Over-engineering: applying enterprise tools to small projects\n• Maintenance overhead keeping tool data current"},{id:"ch7-2-f3",front:"Can RE tools replace skilled Requirements Engineers?",back:"NO.\n\nTools SUPPORT but CANNOT REPLACE:\n• Elicitation (tacit knowledge, trust-building with stakeholders)\n• Conflict resolution (interpersonal skills)\n• Creative requirement discovery\n• Validation with stakeholders\n\nA tool stores and traces; a human facilitates and understands."},{id:"ch7-2-f4",front:"What are the two key criteria when INTRODUCING a Requirements Engineering tool?",back:"C. RE processes must be CLEARLY DEFINED before introduction — don't let the tool define your process.\nB. Risks associated with introduction can be identified through a PILOT OPERATION.\n\nNote: License costs are NOT typically the greatest cost block — training, migration, and process change usually dominate."}]}],quiz:[{id:"ch7-q1",question:"Which two tasks are LEAST supported by using only a text processor for requirements management?",options:["Version management and generating result documents","Requirements tracing and creation of graphic models","Documentation of requirements and goals","Generation of result documents and documentation of requirements"],correctIndex:1,explanation:"Text processors lack built-in traceability linking (connecting requirements to design/tests) and cannot create UML or other graphic models. These require dedicated RM or modelling tools."},{id:"ch7-q2",question:"For UML modelling tools to support TRACEABLE models in RE, they must have which THREE capabilities?",options:["Model elements stored under version control; XML export; links via hyperlinks","Model elements with IDs; UML conformance checking; management reports","XML export; management reports; UML conformance checking","All features: IDs, version control, XML, hyperlinks, UML checking, reports"],correctIndex:0,explanation:"Version control (A), XML export (C), and hyperlink linking (E) enable traceability. IDs alone (D) without linking don't create traceability. UML conformance (B) and reports (F) are nice-to-have but not traceable."},{id:"ch7-q3",question:"Which two statements are CORRECT regarding the introduction of an RE tool?",options:["The tool defines the future RE approach; license costs are the greatest cost block","Risks can be identified through a pilot operation; RE processes must be clearly defined before introduction","RE processes must be defined after introduction based on what the tool supports","License costs are the greatest block; pilot operation is unnecessary"],correctIndex:1,explanation:"Best practice: define RE processes FIRST, then select/introduce a tool. Pilot operations help identify risks. The tool should support your process, not define it. License costs are rarely the biggest factor."},{id:"ch7-q4",question:"Which tool is a dedicated Requirements Management Tool (RMT)?",options:["Microsoft Word","IBM DOORS","Eclipse IDE","Git"],correctIndex:1,explanation:"IBM DOORS (Dynamic Object-Oriented Requirements System) is a dedicated RMT providing structured storage, versioning, traceability, and change management. Word is a word processor; Eclipse is an IDE; Git is version control."},{id:"ch7-q5",question:"Which statement about RE tool support is CORRECT?",options:["A good RE tool can substitute for experienced Requirements Engineers","Tools are only useful for projects with hundreds of requirements","Tools support traceability and versioning but cannot replace human RE skills","RE tools eliminate the need for requirements reviews and validation"],correctIndex:2,explanation:"Tools are enablers — they handle traceability, versioning, and storage efficiently. But elicitation, conflict resolution, and validation are human activities that tools cannot replace."},{id:"ch7-q6",question:"What is a significant RISK when using requirements management tools?",options:["Requirements will be too well organised","The tool creates automatic traceability without human input","Teams focus on maintaining the tool rather than improving requirements quality","Tools make requirements too easily accessible"],correctIndex:2,explanation:"A common pitfall: teams invest effort in filling in tool fields while the actual quality of requirements stagnates. Tools support RE but cannot guarantee requirement quality."}]
+}
+]};
+
+let STATE = {view: 'dashboard', chapterId: null};
+let STUDY = null;
+let QS = null;
+let DARKMODE = localStorage.getItem('cpre_darkmode') === 'true';
+let confirmReset = false;
+
+if (DARKMODE) document.documentElement.classList.add('dark-mode');
+
+const CARDS_KEY = 'cpre_cards';
+const QUIZZES_KEY = 'cpre_quizzes';
+const PASS = 0.70;
+
+function readCards() { try{return JSON.parse(localStorage.getItem(CARDS_KEY)||'{}')}catch{return{}} }
+function readQuizzes() { try{return JSON.parse(localStorage.getItem(QUIZZES_KEY)||'[]')}catch{return[]} }
+function saveCards(c) { localStorage.setItem(CARDS_KEY,JSON.stringify(c)); }
+function saveQuizzes(q) { localStorage.setItem(QUIZZES_KEY,JSON.stringify(q)); }
+
+function getCard(id) { return readCards()[id]||{timesCorrect:0,timesSeen:0,lastSeen:null,nextReviewDate:null}; }
+function updateCard(id, patch) { const c = readCards(); c[id] = {...getCard(id), ...patch}; saveCards(c); }
+
+function getMastery(cardIds) {
+  if (!cardIds.length) return 0;
+  const now = new Date(), cards = readCards();
+  const n = cardIds.filter(id => {
+    const c = cards[id];
+    return c && c.timesCorrect >= 2 && c.nextReviewDate && new Date(c.nextReviewDate) > now;
+  }).length;
+  return Math.round(n / cardIds.length * 100);
+}
+function getDueCount(cardIds) { 
+  const cards = readCards(); 
+  return cardIds.filter(id => !getCard(id).nextReviewDate || new Date(getCard(id).nextReviewDate) <= new Date()).length; 
+}
+function getBestScore(chId) { 
+  const a = readQuizzes().filter(q => q.chapterId === chId);
+  if (!a.length) return null;
+  return Math.round(Math.max(...a.map(q => q.score / q.totalQuestions)) * 100);
+}
+function getAttempts(chId) { 
+  return readQuizzes().filter(q => q.chapterId === chId).sort((a, b) => new Date(b.date) - new Date(a.date));
+}
+function recordAttempt(att) { 
+  const q = readQuizzes();
+  q.push({...att, date: new Date().toISOString()});
+  saveQuizzes(q);
+}
+
+function fmtDate(iso) { 
+  if (!iso) return '—';
+  return new Date(iso).toLocaleDateString(undefined, {day: 'numeric', month: 'short', year: 'numeric'});
+}
+
+/* =====================================================================
+   NAVIGATION & RENDERING
+===================================================================== */
+function navigate(view, extra) {
+  STATE = {view, ...extra};
+  ['dashboard','progress','stats'].forEach(id => {
+    const btn = document.getElementById('nav-'+id);
+    if(btn) btn.classList.toggle('active', view === id);
+  });
+  render();
+  window.scrollTo(0, 0);
+}
+
+function render() {
+  const m = document.getElementById('main');
+  switch(STATE.view) {
+    case 'dashboard': m.innerHTML = renderDashboard(); break;
+    case 'study': m.innerHTML = renderStudy(); break;
+    case 'quiz': m.innerHTML = renderQuiz(); break;
+    case 'progress': m.innerHTML = renderProgress(); break;
+    case 'stats': m.innerHTML = renderStats(); break;
+  }
+}
+
+/* =====================================================================
+   DASHBOARD
+===================================================================== */
+function renderDashboard() {
+  let html = `
+    <div class="dashboard">
+      <div class="dashboard-header">
+        <h1 class="dashboard-title">Welcome back to your study</h1>
+        <p class="dashboard-subtitle">Continue your spaced repetition practice • ${DATA.chapters.length} chapters • 83 flashcards</p>
+      </div>
+
+      <div class="quick-actions">
+        <div class="action-card" onclick="alert('Coming soon')">
+          <div class="action-icon">✨</div>
+          <div class="action-title">Generate Cards</div>
+        </div>
+        <div class="action-card" onclick="alert('Coming soon')">
+          <div class="action-icon">📄</div>
+          <div class="action-title">Import PDF</div>
+        </div>
+        <div class="action-card" onclick="alert('Coming soon')">
+          <div class="action-icon">📝</div>
+          <div class="action-title">Import Notes</div>
+        </div>
+        <div class="action-card" onclick="alert('Coming soon')">
+          <div class="action-icon">➕</div>
+          <div class="action-title">Create Deck</div>
+        </div>
+      </div>
+
+      <div class="decks-container">
+  `;
+
+  DATA.chapters.forEach(ch => {
+    const allIds = ch.subchapters.flatMap(s => s.flashcards.map(f => f.id));
+    const due = allIds.filter(id => !getCard(id).nextReviewDate || new Date(getCard(id).nextReviewDate) <= new Date()).length;
+    const mastered = allIds.filter(id => getCard(id).timesCorrect >= 2).length;
+    const pct = allIds.length ? Math.round(mastered / allIds.length * 100) : 0;
+    
+    html += `
+      <div class="deck-card" onclick="startStudy('${ch.id}')">
+        <div class="deck-header">
+          <div class="deck-number">Ch ${ch.number}</div>
+          ${due > 0 ? `<div class="deck-badge">📌 ${due} due</div>` : ''}
+        </div>
+        <h3 class="deck-title">${ch.title}</h3>
+        <div class="deck-meta">
+          <div class="deck-stat">
+            <div class="deck-stat-value">${allIds.length}</div>
+            <div class="deck-stat-label">Cards</div>
+          </div>
+          <div class="deck-stat">
+            <div class="deck-stat-value">${pct}</div>
+            <div class="deck-stat-label">Mastered %</div>
+          </div>
+          <div class="deck-stat">
+            <div class="deck-stat-value">${due}</div>
+            <div class="deck-stat-label">Due</div>
+          </div>
+        </div>
+        <svg class="progress-ring" viewBox="0 0 100 100">
+          <circle class="ring-circle ring-bg" cx="50" cy="50" r="45"/>
+          <circle class="ring-circle ring-progress" cx="50" cy="50" r="45" 
+                  style="stroke-dasharray: ${282.7 * pct / 100} 282.7; stroke-dashoffset: 0"/>
+        </svg>
+        <div class="deck-actions">
+          <button class="btn btn-primary" style="flex:1" onclick="startStudy('${ch.id}')">Study</button>
+          <button class="btn btn-secondary" style="flex:1" onclick="startQuiz('${ch.id}')">Quiz</button>
+          <button class="btn-icon" onclick="event.stopPropagation(); alert('Bookmarked!')">🔖</button>
+        </div>
+      </div>
+    `;
+  });
+
+  html += `</div></div>`;
+  return html;
+}
+
+function startStudy(chId) {
+  const ch = DATA.chapters.find(c => c.id === chId);
+  const cards = ch.subchapters.flatMap(s => s.flashcards);
+  STUDY = {chId, cards, idx: 0, flipped: false, reviews: {}};
+  navigate('study');
+}
+
+function startQuiz(chId) {
+  const ch = DATA.chapters.find(c => c.id === chId);
+  if (!ch) return;
+  QS = {chapterId: chId, questions: [...ch.quiz], idx: 0, selected: null, answered: false, results: [], mode: null};
+  navigate('quiz');
+}
+
+/* =====================================================================
+   QUIZ
+===================================================================== */
+function renderQuiz() {
+  if (!QS) return renderDashboard();
+  
+  if (QS.mode === 'result') return renderQzResult();
+  if (QS.idx >= QS.questions.length) finishQuiz();
+  
+  const ch = DATA.chapters.find(c => c.id === QS.chapterId);
+  const q = QS.questions[QS.idx];
+  const pct = Math.round(QS.idx / QS.questions.length * 100);
+  const correct = QS.results.filter(r => r.correct).length;
+  
+  let opts = '';
+  q.options.forEach((opt, i) => {
+    let cls = 'qz-opt';
+    if (QS.answered) {
+      if (i === q.correctIndex) cls += ' ok';
+      else if (i === QS.selected) cls += ' ng';
+    }
+    opts += `<button class="${cls}" onclick="qzChoose(${i})" ${QS.answered ? 'disabled' : ''} style="text-align:left;padding:1rem;border:1px solid var(--border-light);border-radius:var(--radius-md);background:var(--bg-card);color:var(--text-primary);font-size:0.95rem;cursor:${QS.answered ? 'not-allowed' : 'pointer'};transition:all var(--duration);margin-bottom:0.5rem">
+      <span style="opacity:0.6;margin-right:0.75rem;font-size:0.85rem">${String.fromCharCode(65+i)}.</span>${escHtml(opt)}
+    </button>`;
+  });
+  
+  let html = `
+    <div style="max-width:700px;margin:0 auto">
+      <button class="btn btn-secondary" style="margin-bottom:1rem" onclick="navigate('dashboard')">← Back</button>
+      <h1 style="font-size:1.5rem;margin-bottom:0.5rem">${ch.title}</h1>
+      <p style="font-size:0.95rem;color:var(--text-secondary);margin-bottom:2rem">Quiz mode</p>
+      
+      <div style="margin-bottom:1.5rem">
+        <div style="display:flex;justify-content:space-between;font-size:0.9rem;color:var(--text-secondary);margin-bottom:0.5rem">
+          <span>Question ${QS.idx+1} of ${QS.questions.length}</span>
+          <span>${correct} correct</span>
+        </div>
+        <div style="height:4px;background:var(--border-light);border-radius:999px;overflow:hidden">
+          <div style="width:${pct}%;height:100%;background:var(--primary);transition:width 0.3s"></div>
+        </div>
+      </div>
+      
+      <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:2rem">
+        <p style="font-size:1.1rem;font-weight:600;line-height:1.6;margin-bottom:1.5rem">${escHtml(q.question)}</p>
+        <div>${opts}</div>
+      </div>
+      
+      ${QS.answered ? `
+        <div style="background:var(--bg-secondary);border-left:4px solid var(--primary);padding:1rem;border-radius:0 var(--radius-md) var(--radius-md) 0;margin-bottom:1.5rem">
+          <strong style="color:${QS.selected === q.correctIndex ? 'var(--success)' : 'var(--error)'}">
+            ${QS.selected === q.correctIndex ? '✅ Correct!' : '❌ Incorrect.'}
+          </strong>
+          <p style="font-size:0.95rem;color:var(--text-secondary);margin-top:0.5rem">${escHtml(q.explanation)}</p>
+        </div>
+        <div style="text-align:right">
+          <button class="btn btn-primary" onclick="qzNext()">${QS.idx + 1 >= QS.questions.length ? 'See results →' : 'Next →'}</button>
+        </div>
+      ` : ''}
+    </div>
+  `;
+  
+  return html;
+}
+
+function qzChoose(i) {
+  if (QS.answered) return;
+  QS.selected = i;
+  QS.answered = true;
+  const q = QS.questions[QS.idx];
+  QS.results.push({question: q, selectedIndex: i, correct: i === q.correctIndex});
+  render();
+}
+
+function qzNext() {
+  QS.idx++;
+  QS.selected = null;
+  QS.answered = false;
+  if (QS.idx >= QS.questions.length) finishQuiz();
+  else render();
+}
+
+function finishQuiz() {
+  const correct = QS.results.filter(r => r.correct).length;
+  const total = QS.questions.length;
+  recordAttempt({chapterId: QS.chapterId, score: correct, totalQuestions: total, missedQuestionIds: QS.results.filter(r => !r.correct).map(r => r.question.id)});
+  QS.mode = 'result';
+  render();
+}
+
+function renderQzResult() {
+  const ch = DATA.chapters.find(c => c.id === QS.chapterId);
+  const correct = QS.results.filter(r => r.correct).length;
+  const total = QS.results.length;
+  const pct = Math.round(correct / total * 100);
+  const pass = pct >= PASS * 100;
+  const missed = QS.results.filter(r => !r.correct);
+
+  let missedHtml = '';
+  missed.forEach(({question, selectedIndex}) => {
+    missedHtml += `<div style="background:var(--bg-card);border:1px solid var(--error-light);border-radius:var(--radius-md);padding:1rem;margin-bottom:0.75rem">
+      <p style="font-weight:600;margin-bottom:0.5rem">${escHtml(question.question)}</p>
+      <p style="font-size:0.9rem;color:var(--error);margin-bottom:0.25rem">✗ Your answer: ${escHtml(question.options[selectedIndex])}</p>
+      <p style="font-size:0.9rem;color:var(--success);margin-bottom:0.5rem">✅ Correct: ${escHtml(question.options[question.correctIndex])}</p>
+      <p style="font-size:0.85rem;color:var(--text-secondary)">${escHtml(question.explanation)}</p>
+    </div>`;
+  });
+
+  let html = `
+    <div style="max-width:640px;margin:0 auto">
+      <div style="text-align:center;padding:2rem;background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-lg);margin-bottom:2rem">
+        <div style="font-size:3.5rem;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1rem">${pct}%</div>
+        <div style="display:inline-block;padding:0.5rem 1.5rem;background:${pass ? 'var(--success-light)' : 'var(--error-light)'};color:${pass ? 'var(--success)' : 'var(--error)'};border-radius:999px;font-weight:700;font-size:0.95rem;margin-bottom:1rem">
+          ${pass ? '✅ PASS' : '❌ FAIL'} — threshold 70%
+        </div>
+        <p style="color:var(--text-secondary)">${correct} of ${total} correct</p>
+      </div>
+      
+      ${missed.length > 0 ? `
+        <div style="margin-bottom:2rem">
+          <h2 style="font-weight:700;margin-bottom:1rem;font-size:1rem">Missed questions (${missed.length})</h2>
+          ${missedHtml}
+        </div>
+      ` : ''}
+      
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center">
+        ${missed.length > 0 ? `<button class="btn btn-primary" onclick="qzRetryMissed()">🔁 Retry missed</button>` : ''}
+        <button class="btn btn-secondary" onclick="qzRetryAll()">Restart quiz</button>
+        <button class="btn btn-secondary" onclick="navigate('dashboard')">Back to dashboard</button>
+      </div>
+    </div>
+  `;
+  
+  return html;
+}
+
+function qzRetryMissed() {
+  const missed = QS.results.filter(r => !r.correct).map(r => r.question);
+  if (!missed.length) return;
+  QS = {chapterId: QS.chapterId, questions: missed, idx: 0, selected: null, answered: false, results: [], mode: null};
+  render();
+}
+
+function qzRetryAll() {
+  const ch = DATA.chapters.find(c => c.id === QS.chapterId);
+  QS = {chapterId: QS.chapterId, questions: [...ch.quiz], idx: 0, selected: null, answered: false, results: [], mode: null};
+  render();
+}
+
+/* =====================================================================
+   STUDY
+===================================================================== */
+function renderStudy() {
+  if (!STUDY) return renderDashboard();
+  
+  const card = STUDY.cards[STUDY.idx];
+  const pct = Math.round(STUDY.idx / STUDY.cards.length * 100);
+  const reviewed = Object.keys(STUDY.reviews).length;
+
+  let html = `
+    <div class="study-container">
+      <div class="study-header">
+        <h1 class="study-title">Spaced Repetition Study</h1>
+        <div class="study-progress">
+          <span class="progress-text">Card ${STUDY.idx + 1} of ${STUDY.cards.length}</span>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: ${pct}%"></div>
+          </div>
+          <span class="progress-text">⏳ ${reviewed} reviewed</span>
+        </div>
+      </div>
+
+      <div class="flashcard ${STUDY.flipped ? 'flipped' : ''}" onclick="flipCard()">
+        <div class="flashcard-label">${STUDY.flipped ? 'Answer' : 'Question'}</div>
+        <div class="flashcard-content">${escHtml(STUDY.flipped ? card.back : card.front)}</div>
+        <div class="flashcard-hint">${STUDY.flipped ? 'Choose your confidence' : 'Click to reveal'}</div>
+      </div>
+  `;
+
+  if (STUDY.flipped) {
+    html += `
+      <div class="confidence-buttons">
+        <button class="confidence-btn again" onclick="reviewCard('again')">
+          <span class="confidence-label">Again</span>
+          <span class="confidence-interval">Today</span>
+        </button>
+        <button class="confidence-btn hard" onclick="reviewCard('hard')">
+          <span class="confidence-label">Hard</span>
+          <span class="confidence-interval">1d</span>
+        </button>
+        <button class="confidence-btn good" onclick="reviewCard('good')">
+          <span class="confidence-label">Good</span>
+          <span class="confidence-interval">3d</span>
+        </button>
+        <button class="confidence-btn easy" onclick="reviewCard('easy')">
+          <span class="confidence-label">Easy</span>
+          <span class="confidence-interval">7d</span>
+        </button>
+      </div>
+    `;
+  }
+
+  html += `
+    <div class="study-controls">
+      <div class="control-left">
+        <button class="btn btn-secondary" onclick="navigate('dashboard')">Exit</button>
+      </div>
+      <div class="control-shortcuts">
+        <span><kbd class="kbd">Space</kbd> Flip</span>
+        <span><kbd class="kbd">1</kbd>-<kbd class="kbd">4</kbd> Confidence</span>
+      </div>
+    </div>
+  </div>`;
+
+  return html;
+}
+
+function flipCard() {
+  if (!STUDY || STUDY.idx >= STUDY.cards.length) return;
+  STUDY.flipped = !STUDY.flipped;
+  render();
+}
+
+function reviewCard(confidence) {
+  if (!STUDY || !STUDY.flipped) return;
+  
+  const card = STUDY.cards[STUDY.idx];
+  STUDY.reviews[card.id] = confidence;
+  
+  const cur = getCard(card.id);
+  let tc = cur.timesCorrect || 0;
+  if (confidence === 'easy') tc++;
+  else if (confidence === 'good') tc++;
+  
+  const d = new Date();
+  const intervals = {again: 0, hard: 1, good: 3, easy: 7};
+  d.setDate(d.getDate() + intervals[confidence]);
+  
+  updateCard(card.id, {timesCorrect: tc, timesSeen: (cur.timesSeen||0)+1, nextReviewDate: d.toISOString()});
+  
+  if (STUDY.idx + 1 >= STUDY.cards.length) showResults();
+  else {
+    STUDY.idx++;
+    STUDY.flipped = false;
+    render();
+  }
+}
+
+function updateCard(id, patch) {
+  const c = readCards();
+  c[id] = {...getCard(id), ...patch};
+  saveCards(c);
+}
+
+function showResults() {
+  const scores = Object.entries(STUDY.reviews);
+  const good = scores.filter(([,v]) => v === 'good' || v === 'easy').length;
+  const pct = Math.round(good / STUDY.cards.length * 100);
+  
+  const html = `
+    <div class="results-screen">
+      <div class="results-score">${pct}%</div>
+      <div class="results-status">${pct >= 70 ? '✅ Great session!' : '📚 Keep practicing'}</div>
+      <p class="results-description">You reviewed ${STUDY.cards.length} cards. ${good} marked as confident.</p>
+      <div class="results-actions">
+        <button class="btn btn-primary" onclick="startStudy('${STUDY.chId}')">Review again</button>
+        <button class="btn btn-secondary" onclick="navigate('dashboard')">Back to dashboard</button>
+      </div>
+      <div class="achievements">
+        <div class="badge"><div class="badge-icon">🔥</div><div class="badge-name">On fire</div></div>
+        <div class="badge"><div class="badge-icon">🎯</div><div class="badge-name">Focused</div></div>
+        <div class="badge"><div class="badge-icon">⭐</div><div class="badge-name">Streak</div></div>
+      </div>
+    </div>
+  `;
+  
+  document.getElementById('main').innerHTML = html;
+}
+
+/* =====================================================================
+   PROGRESS & STATS
+===================================================================== */
+function renderProgress() {
+  let html = `<div style="max-width:900px;margin:0 auto">
+    <h1 style="font-size:1.75rem;font-weight:700;margin-bottom:0.5rem">Progress Overview</h1>
+    <p style="color:var(--text-secondary);margin-bottom:2rem">Your readiness across all ${DATA.chapters.length} CPRE chapters</p>`;
+
+  const stats = DATA.chapters.map(ch => {
+    const ids = ch.subchapters.flatMap(s => s.flashcards.map(f => f.id));
+    const mastery = getMastery(ids);
+    const best = getBestScore(ch.id);
+    const attempts = getAttempts(ch.id);
+    const lastDate = attempts[0]?.date || null;
+    let readiness = null;
+    if (best !== null) readiness = Math.round(mastery * 0.4 + best * 0.6);
+    else if (mastery > 0) readiness = mastery;
+    if (readiness !== null) {
+      // placeholder for overall calc
+    }
+    return {ch, mastery, best, lastDate, readiness};
+  });
+
+  const overallParts = stats.filter(s => s.readiness !== null).map(s => s.readiness);
+  const overall = overallParts.length ? Math.round(overallParts.reduce((a, b) => a + b, 0) / overallParts.length) : null;
+  const passedCards = stats.filter(s => s.mastery >= 70).length;
+  const passedQuiz = stats.filter(s => s.best !== null && s.best >= 70).length;
+
+  html += `
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:2rem">
+      <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:1.25rem;text-align:center">
+        <div style="font-size:2rem;font-weight:800;color:var(--primary);margin-bottom:0.25rem">${overall !== null ? overall + '%' : '—'}</div>
+        <div style="font-size:0.8rem;color:var(--text-secondary)">Overall readiness</div>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:1.25rem;text-align:center">
+        <div style="font-size:2rem;font-weight:800;color:var(--primary);margin-bottom:0.25rem">${passedCards}/${DATA.chapters.length}</div>
+        <div style="font-size:0.8rem;color:var(--text-secondary)">Chapters ≥70% mastered</div>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:1.25rem;text-align:center">
+        <div style="font-size:2rem;font-weight:800;color:var(--primary);margin-bottom:0.25rem">${passedQuiz}/${DATA.chapters.length}</div>
+        <div style="font-size:0.8rem;color:var(--text-secondary)">Chapters quiz-passed</div>
+      </div>
+    </div>
+
+    <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);overflow:hidden">
+      <table style="width:100%;border-collapse:collapse;font-size:0.9rem">
+        <thead>
+          <tr style="background:var(--bg-secondary);border-bottom:1px solid var(--border-light)">
+            <th style="padding:1rem;text-align:left;font-weight:600;font-size:0.8rem;color:var(--text-secondary)">#</th>
+            <th style="padding:1rem;text-align:left;font-weight:600;font-size:0.8rem;color:var(--text-secondary)">Chapter</th>
+            <th style="padding:1rem;text-align:left;font-weight:600;font-size:0.8rem;color:var(--text-secondary)">Flashcard mastery</th>
+            <th style="padding:1rem;text-align:left;font-weight:600;font-size:0.8rem;color:var(--text-secondary)">Best quiz</th>
+            <th style="padding:1rem;text-align:left;font-weight:600;font-size:0.8rem;color:var(--text-secondary)">Last quiz</th>
+            <th style="padding:1rem;text-align:left;font-weight:600;font-size:0.8rem;color:var(--text-secondary)">Readiness</th>
+          </tr>
+        </thead>
+        <tbody>`;
+
+  stats.forEach(({ch, mastery, best, lastDate, readiness}) => {
+    const rdCls = readiness === null ? '#EF4444' : readiness >= 70 ? '#10B981' : readiness >= 40 ? '#F59E0B' : '#EF4444';
+    const rdLbl = readiness === null ? 'Not started' : readiness >= 70 ? 'Ready' : readiness >= 40 ? 'In progress' : 'Needs work';
+    html += `<tr style="border-bottom:1px solid var(--border-light)">
+      <td style="padding:1rem;font-weight:700;color:var(--text-secondary)">${ch.number}</td>
+      <td style="padding:1rem;font-weight:500">${ch.title}</td>
+      <td style="padding:1rem">
+        <div style="display:flex;align-items:center;gap:0.5rem">
+          <div style="width:50px;height:4px;background:var(--border-light);border-radius:999px;overflow:hidden">
+            <div style="width:${mastery}%;height:100%;background:var(--primary)"></div>
+          </div>
+          <span style="font-size:0.85rem">${mastery}%</span>
+        </div>
+      </td>
+      <td style="padding:1rem">${best !== null ? `<span style="font-weight:600;color:${best >= 70 ? 'var(--success)' : 'var(--error)'}">${best}%</span>` : '—'}</td>
+      <td style="padding:1rem;font-size:0.85rem;color:var(--text-secondary)">${fmtDate(lastDate)}</td>
+      <td style="padding:1rem">
+        <span style="display:inline-block;padding:0.25rem 0.75rem;border-radius:999px;font-size:0.8rem;font-weight:600;background:${rdCls}20;color:${rdCls}">${rdLbl}</span>
+      </td>
+    </tr>`;
+  });
+
+  html += `</tbody></table></div>
+    <p style="font-size:0.75rem;color:var(--text-secondary);margin-top:1rem">Readiness = 40% flashcard mastery + 60% best quiz score. Pass mark: 70%.</p>
+  </div>`;
+  
+  return html;
+}
+
+function renderStats() {
+  const attempts = readQuizzes();
+  const totalAttempts = attempts.length;
+  const totalCorrect = attempts.reduce((sum, a) => sum + a.score, 0);
+  const totalQuestions = attempts.reduce((sum, a) => sum + a.totalQuestions, 0);
+  const avgScore = totalAttempts > 0 ? Math.round(totalCorrect / totalQuestions * 100) : 0;
+  
+  const chapterStats = DATA.chapters.map(ch => {
+    const chAttempts = attempts.filter(a => a.chapterId === ch.id);
+    const chScores = chAttempts.map(a => Math.round(a.score / a.totalQuestions * 100));
+    const bestScore = chScores.length > 0 ? Math.max(...chScores) : null;
+    return {ch, attempts: chAttempts.length, bestScore};
+  });
+
+  return `
+    <div style="max-width:900px;margin:0 auto">
+      <h1 style="font-size:1.75rem;font-weight:700;margin-bottom:2rem">Statistics & Performance</h1>
+      
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-bottom:2rem">
+        <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:1.25rem;text-align:center">
+          <div style="font-size:2rem;font-weight:800;color:var(--primary);margin-bottom:0.25rem">${totalAttempts}</div>
+          <div style="font-size:0.8rem;color:var(--text-secondary)">Quiz attempts</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:1.25rem;text-align:center">
+          <div style="font-size:2rem;font-weight:800;color:var(--primary);margin-bottom:0.25rem">${avgScore}%</div>
+          <div style="font-size:0.8rem;color:var(--text-secondary)">Average score</div>
+        </div>
+        <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:1.25rem;text-align:center">
+          <div style="font-size:2rem;font-weight:800;color:var(--primary);margin-bottom:0.25rem">${totalCorrect}</div>
+          <div style="font-size:0.8rem;color:var(--text-secondary)">Questions correct</div>
+        </div>
+      </div>
+
+      <div style="background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:1.5rem">
+        <h2 style="font-size:1.1rem;font-weight:700;margin-bottom:1rem">Performance by chapter</h2>
+        ${chapterStats.map(({ch, attempts, bestScore}) => `
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:0.75rem;border-bottom:1px solid var(--border-light)">
+            <div>
+              <div style="font-weight:600">${ch.title}</div>
+              <div style="font-size:0.85rem;color:var(--text-secondary)">${attempts} quiz ${attempts === 1 ? 'attempt' : 'attempts'}</div>
+            </div>
+            <div style="text-align:right">
+              ${bestScore !== null ? `<div style="font-size:1.25rem;font-weight:700;color:${bestScore >= 70 ? 'var(--success)' : 'var(--error)'}">${bestScore}%</div>` : '<div style="color:var(--text-secondary)">—</div>'}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+/* =====================================================================
+   UTILITIES
+===================================================================== */
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function toggleDarkMode() {
+  DARKMODE = !DARKMODE;
+  localStorage.setItem('cpre_darkmode', DARKMODE);
+  document.documentElement.classList.toggle('dark-mode', DARKMODE);
+}
+
+function showSettings() {
+  confirmReset = false;
+  renderSettingsModal();
+}
+
+function renderSettingsModal() {
+  const r = document.getElementById('modal-root');
+  r.innerHTML = `<div style="position:fixed;inset:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:200" onclick="if(event.target===event.currentTarget)closeModalDirect()">
+    <div style="background:var(--bg-card);border-radius:var(--radius-xl);padding:2rem;max-width:500px;width:90%;box-shadow:0 20px 25px -5px rgba(0,0,0,0.1)">
+      <h2 style="font-size:1.3rem;font-weight:700;margin-bottom:1rem">⚙️ Settings</h2>
+      ${!confirmReset ? `
+        <p style="color:var(--text-secondary);margin-bottom:1.5rem">Reset all your study progress — flashcard history, spaced-repetition schedules, and quiz attempt records will be permanently deleted from this browser.</p>
+        <div style="display:flex;gap:0.75rem;justify-content:flex-end">
+          <button class="btn btn-secondary" onclick="closeModalDirect()">Cancel</button>
+          <button style="padding:0.55rem 1.15rem;background:var(--error);color:white;border:none;border-radius:var(--radius-sm);font-weight:600;cursor:pointer" onclick="askConfirmReset()">Reset progress…</button>
+        </div>
+      ` : `
+        <p style="color:var(--text-secondary);margin-bottom:1.5rem"><strong>Are you sure?</strong> This cannot be undone. All flashcard mastery data and quiz scores will be permanently erased.</p>
+        <div style="display:flex;gap:0.75rem;justify-content:flex-end">
+          <button class="btn btn-secondary" onclick="closeModalDirect()">Cancel</button>
+          <button style="padding:0.55rem 1.15rem;background:var(--error);color:white;border:none;border-radius:var(--radius-sm);font-weight:600;cursor:pointer" onclick="doReset()">Yes, reset everything</button>
+        </div>
+      `}
+    </div>
+  </div>`;
+}
+
+function closeModalDirect() {
+  document.getElementById('modal-root').innerHTML = '';
+  confirmReset = false;
+}
+
+function askConfirmReset() {
+  confirmReset = true;
+  renderSettingsModal();
+}
+
+function doReset() {
+  localStorage.removeItem(CARDS_KEY);
+  localStorage.removeItem(QUIZZES_KEY);
+  closeModalDirect();
+  QS = null;
+  STUDY = null;
+  render();
+}
+
+/* =====================================================================
+   INIT
+===================================================================== */
+navigate('dashboard');
+</script>
+</body>
+</html>
