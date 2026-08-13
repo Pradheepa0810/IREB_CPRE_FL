@@ -36,12 +36,6 @@ There is no build step required for the static HTML version.
 2. Open `index.html` or `cpre-study.html` in a browser.
 3. Study the chapters, answer quizzes, and review your progress.
 
-## GitHub publishing
-
-Suggested repository for publishing:
-
-https://github.com/Pradheepa0810/IREB_CPRE_FL
-
 ## Notes
 
 The README uses local SVG images so the documentation stays portable inside the repository.
