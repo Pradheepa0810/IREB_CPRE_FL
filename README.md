@@ -42,11 +42,6 @@ Suggested repository for publishing:
 
 https://github.com/Pradheepa0810/IREB_CPRE_FL
 
-Suggested git identity:
-
-- GitHub profile: Pradheepa0810
-- Email: pradheeparockzz@gmail.com
-
 ## Notes
 
 The README uses local SVG images so the documentation stays portable inside the repository.
