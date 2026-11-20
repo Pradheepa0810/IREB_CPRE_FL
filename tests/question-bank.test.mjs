@@ -66,7 +66,7 @@ test('optional Andrew and Quizlet JSON pools remain valid and their figures reso
   }
 });
 
-test('app uses one HTML entrypoint and organized assets', () => {
+test('app has one study page, a root redirect, and organized assets', () => {
   const html = fs.readFileSync(path('cpre-study.html'), 'utf8');
   assert.match(html, /assets\/cpre-study-data\.js/);
   assert.match(html, /MOCK_BANK_FILES=\['quizzes\/cpre-fullmock-bank\.txt'\]/);
@@ -75,6 +75,7 @@ test('app uses one HTML entrypoint and organized assets', () => {
   assert.ok(fs.existsSync(path('assets/readme/case-study-preview.svg')));
   assert.ok(fs.existsSync(path('assets/readme/progress-preview.svg')));
   assert.ok(fs.existsSync(path('assets/flashcards/cpre-extra-flashcards.js')));
-  assert.equal(fs.existsSync(path('index.html')), false);
+  const index = fs.readFileSync(path('index.html'), 'utf8');
+  assert.match(index, /http-equiv="refresh" content="0; url=\.\/cpre-study\.html"/);
   assert.equal(fs.existsSync(path('CPRE_Question_Bank.md')), false);
 });

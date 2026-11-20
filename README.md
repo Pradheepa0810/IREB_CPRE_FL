@@ -22,7 +22,7 @@ These are vector previews of the current interface, not screenshots.
 
 ## Project files
 
-- `cpre-study.html` is the only HTML app page and can be opened directly.
+- `cpre-study.html` is the study app. The small `index.html` redirects the GitHub Pages root to it.
 - `assets/cpre-study-data.js` is the app's single runtime JavaScript data bundle; it combines the canonical questions and built-in flashcard deck.
 - `assets/quizzes/cpre-fullmock-bank.txt` contains Final Mock tests 1–10 in one text file. Tests 11–15 are in the canonical question bank.
 - `assets/quizzes/cpre-question-bank.json` is the editable source for the canonical 140 chapter questions and five 45-question mocks (225 questions).
@@ -41,7 +41,7 @@ These are vector previews of the current interface, not screenshots.
 
 ## How to use
 
-Open `cpre-study.html` directly in a browser. Alternatively, serve the folder with any static file server, such as VS Code Live Server.
+Open `cpre-study.html` directly in a browser, or open `index.html` to redirect to it. Alternatively, serve the folder with any static file server, such as VS Code Live Server.
 
 ## Local development
 
@@ -60,7 +60,7 @@ This repository is a static site, so GitHub Pages can serve it directly from the
 3. Set the source to `Deploy from a branch`, then choose the `main` branch and `/ (root)` folder.
 4. Save the settings and wait for the Pages URL to be generated.
 
-Open the app at `<Pages URL>/cpre-study.html` after Pages is enabled. Because the project intentionally has no `index.html`, the repository root URL will not redirect to the app.
+The repository root URL redirects to `cpre-study.html`; that page can also be opened directly at `<Pages URL>/cpre-study.html`.
 
 Useful notes:
 
