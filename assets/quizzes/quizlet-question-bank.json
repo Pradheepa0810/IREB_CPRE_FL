@@ -1,0 +1,4872 @@
+{
+  "schemaVersion": 1,
+  "source": "quizlet.txt",
+  "parsedCount": 160,
+  "skippedCount": 3,
+  "questions": [
+    {
+      "id": "QZI-001",
+      "type": "A",
+      "points": 2,
+      "prompt": "Which definition best characterizes the term \"traceability\" in terms of requirements engineering? (2 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Traceability of the effort for the elicitation of requirements, beginning with the elicitation of the documentation right to the point of requirements acceptance"
+        },
+        {
+          "id": "B",
+          "text": "Monitoring of progress in requirements elicitation"
+        },
+        {
+          "id": "C",
+          "text": "Ability to analyze requirements for contradictory content, especially between the requirements specifications and the test cases"
+        },
+        {
+          "id": "D",
+          "text": "Traceability of the requirements, along with the associated documents, from the requirements elicitation to the implementation"
+        },
+        {
+          "id": "E",
+          "text": "Level of stabilization between the elicited and approved requirements"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-002",
+      "type": "P",
+      "points": 1,
+      "requiredCount": 2,
+      "prompt": "Your company uses only text processing as a tool in requirements management. Which two essential tasks for requirements management are least supported by this tool? (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Version management of individual requirements"
+        },
+        {
+          "id": "B",
+          "text": "Generation of result documents"
+        },
+        {
+          "id": "C",
+          "text": "Requirements tracing"
+        },
+        {
+          "id": "D",
+          "text": "Creation of graphic models"
+        },
+        {
+          "id": "E",
+          "text": "Documentation of requirements and goals"
+        }
+      ],
+      "correctAnswer": [
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-003",
+      "type": "P",
+      "points": 3,
+      "requiredCount": 3,
+      "prompt": "Your company works intensively with models in requirements engineering and uses UML for the description of models. Which three capabilities should a modeling tool possess in order to be able to create traceable models in the requirements engineering? (3 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "The model elements can be stored under version control"
+        },
+        {
+          "id": "B",
+          "text": "The models are checked for conformity with the UML definition"
+        },
+        {
+          "id": "C",
+          "text": "The model is exported in the XML format"
+        },
+        {
+          "id": "D",
+          "text": "Every model element must possess an ID"
+        },
+        {
+          "id": "E",
+          "text": "Model elements can be linked via hyperlinks"
+        },
+        {
+          "id": "F",
+          "text": "The modeling tool creates reports suitable for management"
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-004",
+      "type": "P",
+      "points": 2,
+      "requiredCount": 2,
+      "prompt": "Which two statements are correct with regard to the introduction of a requirements engineering tool? (2 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "The introduction of a tool defines the future requirements engineering approach"
+        },
+        {
+          "id": "B",
+          "text": "Risks associated with the introduction can be identified through a pilot operation"
+        },
+        {
+          "id": "C",
+          "text": "The requirements engineering processes must be clearly defined before introduction"
+        },
+        {
+          "id": "D",
+          "text": "The license costs are generally the greatest cost block relating to the introduction of a requirements engineering tool"
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "C"
+      ],
+      "explanation": "A pilot operation can expose risks before full rollout, and the requirements engineering process should be defined before selecting a tool. License fees are not generally the greatest cost; migration, integration, training, and process change can be significant.",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-005",
+      "type": "P",
+      "points": 2,
+      "requiredCount": 3,
+      "prompt": "In requirements engineering, a differentiation is made between system scope and context scope. In both cases it is possible that so-called grey zones may appear. Which sentences are true? (2 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "The grey zone relating to system scope must be resolved immediately at the beginning of the requirements engineering."
+        },
+        {
+          "id": "B",
+          "text": "The irrelevant part of the system environment has no impact on the requirements of the system to be developed."
+        },
+        {
+          "id": "C",
+          "text": "The context boundary is the boundary that separates the subjects of the requirement engineering from irrelevant aspects."
+        },
+        {
+          "id": "D",
+          "text": "The grey zone relating to context scope includes aspects that are ambiguous in terms of whether they have an impact on the system or not."
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-006",
+      "type": "P",
+      "points": 2,
+      "requiredCount": 2,
+      "prompt": "You are employed as a requirements engineer in a company that develops control software for electric motors. During your work it becomes increasingly evident that the developers are very well aware of the necessary requirements, even though the requirements are not documented in their entirety. Nevertheless, you decide to document requirements systematically. Which two of the following arguments justifies this step? (2 Points) Documenting requirements systematically is important, because...",
+      "options": [
+        {
+          "id": "A",
+          "text": "... implementation without documented requirements is not possible."
+        },
+        {
+          "id": "B",
+          "text": "... non-documented requirements are difficult to negotiate between the stakeholders."
+        },
+        {
+          "id": "C",
+          "text": "... the coverage of the requirements by means of test cases cannot be checked."
+        },
+        {
+          "id": "D",
+          "text": "... documented requirements are also good requirements."
+        }
+      ],
+      "correctAnswer": [
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-007",
+      "type": "P",
+      "points": 2,
+      "requiredCount": 2,
+      "prompt": "In delimiting system and system context, a differentiation is made between the system boundary and the context boundary. This differentiation is important in order to understand which aspects impact on the requirements of the system to be developed and which do not. Choose the two correct statements. (2 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "The context boundary separates the system from the system context."
+        },
+        {
+          "id": "B",
+          "text": "The system boundary and the context boundary define the system context."
+        },
+        {
+          "id": "C",
+          "text": "The system context includes all aspects that are not relevant to the requirements of the planned system."
+        },
+        {
+          "id": "D",
+          "text": "Only the aspects within the system boundary must be taken into account in order to determine the requirements of the system to be developed."
+        },
+        {
+          "id": "E",
+          "text": "The selection of the system boundary establishes which aspects are covered by the system to be developed and which lie beyond its scope."
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "E"
+      ],
+      "explanation": "The system boundary separates the system from its context; the context boundary separates the relevant context from the irrelevant environment. Together these delimit the system context, and selecting the system boundary defines what is inside the system scope.",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-008",
+      "type": "P",
+      "points": 1,
+      "requiredCount": 2,
+      "prompt": "Which two pieces of information should always be recorded in the stakeholder list? (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Importance of the stakeholders"
+        },
+        {
+          "id": "B",
+          "text": "Role designation"
+        },
+        {
+          "id": "C",
+          "text": "Length of service with a company"
+        },
+        {
+          "id": "D",
+          "text": "Disciplinary superior"
+        },
+        {
+          "id": "E",
+          "text": "References to previously conducted projects"
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-009",
+      "type": "P",
+      "points": 2,
+      "requiredCount": 2,
+      "prompt": "A new system for monitoring vital functions of patients is to be developed. The system is to be used in intensive care. The usability of the system is especially critical, primarily because the nursing staff must correctly interpret the information indicated by the system and do sounder great time pressure. Which two techniques are best suited to identifying the user requirements? (2 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Questionnaires / interviews"
+        },
+        {
+          "id": "B",
+          "text": "Apprenticing"
+        },
+        {
+          "id": "C",
+          "text": "Field surveys"
+        },
+        {
+          "id": "D",
+          "text": "Role playing"
+        },
+        {
+          "id": "E",
+          "text": "Brainstorming"
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-010",
+      "type": "A",
+      "points": 2,
+      "prompt": "Requirements elicitation: Your company has received a customer contract to develop a system for the scheduling of the customer's delivery vans. It is your task to identify the requirements for this scheduling system. You have arranged appointments for interviews with three key members of the customer's staff, and are now preparing interview questions. Which of the questions below are appropriate interview questions for the requirements elicitation? (2 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "What are the most important technical terms for the application and how are they defined?"
+        },
+        {
+          "id": "B",
+          "text": "If the delivery deadline is not met, is a contract penalty to be paid?"
+        },
+        {
+          "id": "C",
+          "text": "What data quantities / data rates are to be processed?"
+        },
+        {
+          "id": "D",
+          "text": "When is the installation of the completed system to be started?"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-011",
+      "type": "P",
+      "points": 1,
+      "requiredCount": 2,
+      "prompt": "You would like to design a requirements document in such a way that it is particularly well suited to the project participants who are to continue working with it. Please select from the following statements the two most appropriate assignments of requirement properties to participants. (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "For the tester the requirements must be practicable."
+        },
+        {
+          "id": "B",
+          "text": "For the developers the requirements must be easily changeable."
+        },
+        {
+          "id": "C",
+          "text": "For all participants the requirements must be consistent."
+        },
+        {
+          "id": "D",
+          "text": "For the project manager the requirements must be evaluated."
+        },
+        {
+          "id": "E",
+          "text": "For maintenance the requirements must be testable."
+        }
+      ],
+      "correctAnswer": [
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-012",
+      "type": "P",
+      "points": 2,
+      "requiredCount": 2,
+      "prompt": "Sentence-templates can be used to document natural language requirements. You want to introduce such a sentence-template in your project and must convince your project manager of its advantages. Which two arguments do most likely put forward in this discussion? (2 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "High quality requirements are guaranteed already from the initial documentation."
+        },
+        {
+          "id": "B",
+          "text": "Requirements that are formulated according to the sentence-template contain no linguistic transformation effects."
+        },
+        {
+          "id": "C",
+          "text": "Drafting requirements in accordance with sentence-templates can be learned in a short time."
+        },
+        {
+          "id": "D",
+          "text": "The use of a sentence-template basically delivers greater information content."
+        },
+        {
+          "id": "E",
+          "text": "A requirement drafted according to a sentence-template satisfies all quality criteria for requirements."
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "B"
+      ],
+      "explanation": "",
+      "reviewNote": "The supplied A, B key is not reliable: A claims templates guarantee high quality, which they do not. C appears supportable, but the second correct choice is unclear from the supplied wording. Review against the original source before relying on its score.",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-013",
+      "type": "P",
+      "points": 1,
+      "requiredCount": 2,
+      "prompt": "As a requirements engineer, you deal with a diverse range of requirements. A template for natural language functional requirements can help you to formulate different forms of system activities in a more precise way. Which two kinds of system activities are among those supported? (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "User interaction"
+        },
+        {
+          "id": "B",
+          "text": "Technical requirement"
+        },
+        {
+          "id": "C",
+          "text": "Quality requirements"
+        },
+        {
+          "id": "D",
+          "text": "Independent system activity"
+        },
+        {
+          "id": "E",
+          "text": "System requirement"
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-014",
+      "type": "P",
+      "points": 2,
+      "requiredCount": 2,
+      "prompt": "You are to create a requirements specification for an internet banking software. The system shall perform bank credit transfers and therefore receives from the user, among other information, the bank identification code and the name of the bank. Now things have changed so that only the bank identification code must be entered by the user and the bank name is no longer required. On which part of your documentation do you most likely have to work in order to incorporate this change? (2 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Nowhere, since this is a detail for the architecture."
+        },
+        {
+          "id": "B",
+          "text": "In the chapter in which the states of the system are described."
+        },
+        {
+          "id": "C",
+          "text": "As a change in the goals has been communicated, the goals in the specification must be updated."
+        },
+        {
+          "id": "D",
+          "text": "If it is about inputs and outputs of the system, this change has to be worked into the context diagram."
+        },
+        {
+          "id": "E",
+          "text": "You have to adjust the class model and/or the data model, which describe the structure of the system's input and output data."
+        }
+      ],
+      "correctAnswer": [
+        "D",
+        "E"
+      ],
+      "explanation": "Removing a bank name from user input changes the system input/interface, which should be reflected in the context view and in the data or class model describing input data. It does not change the stated business goals.",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-015",
+      "type": "A",
+      "points": 1,
+      "prompt": "One activity in managing requirements includes prioritization of the requirements. Which of the following criteria is not a sensible criterion for prioritization? (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "The impact on the existing operational system (operating environment)"
+        },
+        {
+          "id": "B",
+          "text": "The influence on the overall success of the business"
+        },
+        {
+          "id": "C",
+          "text": "The effort for the validation of the requirements"
+        },
+        {
+          "id": "D",
+          "text": "The costs resulting from the implementation of the requirements"
+        },
+        {
+          "id": "E",
+          "text": "Which requirements must be implemented in which release"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-016",
+      "type": "P",
+      "points": 1,
+      "requiredCount": 2,
+      "prompt": "In requirements engineering, the use of model-based documentation is very helpful. Behaviour, functions and the structures of the entity being considered can be represented with diagrams. Which two of the following diagrams help to represent the structural perspective of the requirements model? (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Entity-relationship diagram"
+        },
+        {
+          "id": "B",
+          "text": "State diagram"
+        },
+        {
+          "id": "C",
+          "text": "Deployment diagram"
+        },
+        {
+          "id": "D",
+          "text": "Class diagram"
+        },
+        {
+          "id": "E",
+          "text": "Data diagram"
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-017",
+      "type": "P",
+      "points": 2,
+      "requiredCount": 2,
+      "prompt": "Requirements documentation can either be natural language or model-based. Which two statements are most applicable? (2 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "If documentation is model-based, natural language documentation can be dispensed with."
+        },
+        {
+          "id": "B",
+          "text": "As models are more formal, they offer a higher degree of uniqueness compared to natural language."
+        },
+        {
+          "id": "C",
+          "text": "In requirements engineering models are more suitable than textual descriptions to reduce the complexity of the entity being considered."
+        },
+        {
+          "id": "D",
+          "text": "When deciding between model-based and natural language documentation, model-based is preferable."
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "C"
+      ],
+      "explanation": "Models use a restricted notation that can reduce ambiguity, and abstraction can help manage complexity. Model-based documentation complements rather than automatically replaces natural-language descriptions.",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-018",
+      "type": "P",
+      "points": 1,
+      "requiredCount": 2,
+      "prompt": "One task of the requirements engineer is negotiation of requirements. At this point, conflicts between the stakeholders may be discovered. These must then be resolved. In this process, a differentiation is made between various kinds of conflict. Which two of the listed conflicts are least suitable for handling by the requirements engineer? (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Subject matter conflict"
+        },
+        {
+          "id": "B",
+          "text": "Value conflict"
+        },
+        {
+          "id": "C",
+          "text": "Architectural conflict"
+        },
+        {
+          "id": "D",
+          "text": "Cost conflict"
+        },
+        {
+          "id": "E",
+          "text": "Structural conflict"
+        }
+      ],
+      "correctAnswer": [
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-019",
+      "type": "P",
+      "points": 2,
+      "requiredCount": 4,
+      "prompt": "Validating requirements is one of the main activities of requirements engineering. Which four of the following techniques are suitable for requirements validation? (2 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Stakeholder analysis"
+        },
+        {
+          "id": "B",
+          "text": "Walk through"
+        },
+        {
+          "id": "C",
+          "text": "Ranking"
+        },
+        {
+          "id": "D",
+          "text": "Monitoring"
+        },
+        {
+          "id": "E",
+          "text": "Decomposition"
+        },
+        {
+          "id": "F",
+          "text": "Apprenticing"
+        },
+        {
+          "id": "G",
+          "text": "Generalization"
+        },
+        {
+          "id": "H",
+          "text": "Validation by using an interface prototype"
+        },
+        {
+          "id": "I",
+          "text": "Perspective-based reading"
+        },
+        {
+          "id": "J",
+          "text": "Inspection"
+        },
+        {
+          "id": "K",
+          "text": "Visualization"
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "H",
+        "I",
+        "J"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-020",
+      "type": "P",
+      "points": 3,
+      "requiredCount": 3,
+      "prompt": "You are employed as a requirements engineer in a company in the logistics sector and are involved in a project that aims to replace a legacy application for distribution and shipment of goods with a new system. A colleague has already created a context diagram. You are assigned to check this. What are your thoughts about this? Which sentences are true? (3 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "The problem assignment of the system cannot be derived from the diagram."
+        },
+        {
+          "id": "B",
+          "text": "The relationship between truck and truck driver is not necessary."
+        },
+        {
+          "id": "C",
+          "text": "The actor with the designation \"???\" and the data flow \"Goods???\" should be omitted, because there is not enough information about them and there are too many ambiguities."
+        },
+        {
+          "id": "D",
+          "text": "The relationship between loading crane and the system is not specified in sufficient detail."
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explanation": "",
+      "imageAsset": "quizzes/quizlet-context-diagram-reconstruction.svg",
+      "imageCaption": "Reconstructed illustrative context sketch; the original diagram was not supplied, so its original labels and links cannot be confirmed.",
+      "reviewNote": "Answer key is provisional because the referenced original diagram is missing.",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-021",
+      "type": "P",
+      "points": 2,
+      "requiredCount": 2,
+      "prompt": "You wish to define technically relevant terms in a project. Select the true ones from the following statements in order to complete the sentence beginning \"The definition of technically relevant terms ...\" (2 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "...is a desirable but not strictly necessary component of requirement documents."
+        },
+        {
+          "id": "B",
+          "text": "...must establish for technical terms their meanings for the system to be specified."
+        },
+        {
+          "id": "C",
+          "text": "...must be cross-project in nature."
+        },
+        {
+          "id": "D",
+          "text": "...is always made more understandable by means of additional examples and counter-examples."
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-022",
+      "type": "P",
+      "points": 2,
+      "requiredCount": 4,
+      "prompt": "Evaluate the following guidelines as to which should be adhered to when writing a requirements specification: (2 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Minimize the number of headers in order to decrease the size of the document."
+        },
+        {
+          "id": "B",
+          "text": "Only one requirement per sentence, no nesting of requirements."
+        },
+        {
+          "id": "C",
+          "text": "Highlight legally binding requirements in italics."
+        },
+        {
+          "id": "D",
+          "text": "Use of a consistent terminology."
+        },
+        {
+          "id": "E",
+          "text": "Interesting and diverse style of writing."
+        },
+        {
+          "id": "F",
+          "text": "Use of sentence-templates for requirement formulation."
+        },
+        {
+          "id": "G",
+          "text": "Use of short sentences and paragraphs."
+        },
+        {
+          "id": "H",
+          "text": "Unknown terms furnished with references to Wikipedia."
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "D",
+        "F",
+        "G"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-023",
+      "type": "P",
+      "points": 2,
+      "requiredCount": 3,
+      "prompt": "Listed below you will find four reasons why different views of individual components of the requirements are used instead of a single view displaying all the requirements and attributes. Which of the following reasons are true? (2 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Stakeholders only receive the part of the documentation relevant to them."
+        },
+        {
+          "id": "B",
+          "text": "Requirements which belong together are grouped in order to facilitate the review process."
+        },
+        {
+          "id": "C",
+          "text": "In order to hide requirements from certain stakeholders who shall not have read authorization."
+        },
+        {
+          "id": "D",
+          "text": "In order to guarantee that more than one person can work at the same time on a specification."
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-024",
+      "type": "P",
+      "points": 2,
+      "requiredCount": 5,
+      "prompt": "A requirement specification includes a description of the properties of the requirement. Which of the properties listed below can be used as requirement attributes and which cannot? Select the true ones. (2 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Importance of the requirements"
+        },
+        {
+          "id": "B",
+          "text": "Criticality of the requirements"
+        },
+        {
+          "id": "C",
+          "text": "Responsibility for the implementation of the requirement"
+        },
+        {
+          "id": "D",
+          "text": "The release in which the requirement will be productively implemented for the first time."
+        },
+        {
+          "id": "E",
+          "text": "How legally binding the requirement is."
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-025",
+      "type": "P",
+      "points": 2,
+      "requiredCount": 3,
+      "prompt": "You have been commissioned to analyze a change request for its possible impact. Which of the following aspects must be analyzed for this? (2 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "The justification of the change"
+        },
+        {
+          "id": "B",
+          "text": "The test cases to be altered due to the change."
+        },
+        {
+          "id": "C",
+          "text": "The effort involved in making the change."
+        },
+        {
+          "id": "D",
+          "text": "The stakeholders affected by the change."
+        }
+      ],
+      "correctAnswer": [
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-026",
+      "type": "A",
+      "points": 1,
+      "prompt": "You are project manager for a system that your company is creating for the military in the field of logistics. A requirements engineer has been assigned to your project but does not have all the desirable skills for this role. In respect to the attributes of the requirements engineer, which of the following statements implies the greatest risk for the requirements engineering? (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "The requirements engineer is not familiar with the military ranks and so cannot deal adequately with the hierarchical sensitivities."
+        },
+        {
+          "id": "B",
+          "text": "The requirements engineer does not have detailed knowledge of the military norms and standards that should be applied to the system."
+        },
+        {
+          "id": "C",
+          "text": "The requirements engineer has no solid project management training."
+        },
+        {
+          "id": "D",
+          "text": "The requirements engineer is introverted and has no knowledge of requirements elicitation and documentation."
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-027",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following statements best characterizes the relationship between a requirements engineer and a stakeholder in the role of a tester? (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "The requirements engineer delivers input for the work of the stakeholder."
+        },
+        {
+          "id": "B",
+          "text": "The output from the requirements engineer is managed by the stakeholder."
+        },
+        {
+          "id": "C",
+          "text": "The stakeholder delivers input for the requirements engineer."
+        },
+        {
+          "id": "D",
+          "text": "The stakeholder monitors the work of the requirements engineer."
+        },
+        {
+          "id": "E",
+          "text": "The work of the requirements engineer is not related to the role of the stakeholder."
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-028",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which sentence best characterises the term \"stakeholder\"? (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "The external actors interacting with a system and the technical interfaces to surrounding systems are designated as stakeholders."
+        },
+        {
+          "id": "B",
+          "text": "Stakeholders are persons and organisations affected by the development and the use of the system or of the product."
+        },
+        {
+          "id": "C",
+          "text": "Stakeholders are special interest representatives who are responsible for the approval of the first project phase."
+        },
+        {
+          "id": "D",
+          "text": "A stakeholder is responsible for the administration of the software development environment."
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-029",
+      "type": "A",
+      "points": 1,
+      "prompt": "You are assigned to carry out and document a system and context delimitation for a software system that is to be developed. What diagram is least suited for the representation of the delimitation? (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Class diagram"
+        },
+        {
+          "id": "B",
+          "text": "Use case diagram"
+        },
+        {
+          "id": "C",
+          "text": "State diagram"
+        },
+        {
+          "id": "D",
+          "text": "Context diagram with data flows"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-030",
+      "type": "A",
+      "points": 1,
+      "prompt": "According to the Kano model, there is a particular category of system attributes that has an almost linear relationship between satisfaction and degree of compliance. For which category is this so? (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Basic attributes"
+        },
+        {
+          "id": "B",
+          "text": "Performance attributes"
+        },
+        {
+          "id": "C",
+          "text": "Excitement attributes"
+        },
+        {
+          "id": "D",
+          "text": "Needs"
+        },
+        {
+          "id": "E",
+          "text": "Goals"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-031",
+      "type": "A",
+      "points": 1,
+      "prompt": "As part of the \"UniKasso\" project, the \"CRETIL\" company is standardising the payment methods for all customers. The requirements specification has been created and the first release is currently being implemented. This week, the management has decided to include the implementation of the \"credit card\" mode of payment in the first release and to shift the \"direct debit\" mode of payment to the second release. The test manager receives the order to adjust the test planning accordingly. Which particular characteristic of the requirements will facilitate the work of the test manager significantly in this respect? (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Coherence"
+        },
+        {
+          "id": "B",
+          "text": "Testability"
+        },
+        {
+          "id": "C",
+          "text": "Flexibility"
+        },
+        {
+          "id": "D",
+          "text": "Stability"
+        },
+        {
+          "id": "E",
+          "text": "Traceability"
+        }
+      ],
+      "correctAnswer": [
+        "E"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-032",
+      "type": "A",
+      "points": 1,
+      "prompt": "Starting from an informal and unstructured description of the facts, semiformal description techniques attempt to take a step in the direction of formality, for example to prevent misunderstandings. One of the semiformal description techniques is the sentence-template. What is the most precise definition of a sentence-template as used for requirements? (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "A sentence-template is a blueprint for a requirement."
+        },
+        {
+          "id": "B",
+          "text": "A sentence-template is a blueprint for the semantic filling of the individual requirement elements."
+        },
+        {
+          "id": "C",
+          "text": "A sentence-template is a blueprint for the syntax and semantics of a requirement."
+        },
+        {
+          "id": "D",
+          "text": "A sentence-template is a blueprint for the syntactical structure of an individual requirement."
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-033",
+      "type": "A",
+      "points": 2,
+      "prompt": "At a technical college, each student is supervised by a lecturer. Some lecturers supervise several students, some none. Which of the following class diagrams best shows this student-lecturer relationship? (2 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Option A"
+        },
+        {
+          "id": "B",
+          "text": "Option B"
+        },
+        {
+          "id": "C",
+          "text": "Option C"
+        },
+        {
+          "id": "D",
+          "text": "Option D"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "imageAsset": "quizzes/quizlet-class-diagram-options.svg",
+      "imageCaption": "Illustrative multiplicity options generated from the question text; not the original diagrams.",
+      "reviewNote": "The original answer-option diagrams were missing. These newly drawn options illustrate the stated multiplicities but cannot verify that the source option B had this exact diagram.",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-034",
+      "type": "A",
+      "points": 1,
+      "prompt": "You model invoices and invoice items with a UML class diagram. Explanation: The total amount of an invoice is calculated by summing up all individual invoice items. This means that an invoice showing 5 article prices contains 5 invoice items. What model element most accurately describes the relationship between invoice and invoice items? (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Composition"
+        },
+        {
+          "id": "B",
+          "text": "Aggregation"
+        },
+        {
+          "id": "C",
+          "text": "Generalisation"
+        },
+        {
+          "id": "D",
+          "text": "Association"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-035",
+      "type": "A",
+      "points": 1,
+      "prompt": "You carry out modelling of requirements with a use case diagram. Which answer best describes its prospective modelling elements? (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Objects, activities and associations"
+        },
+        {
+          "id": "B",
+          "text": "Actors, messages and activities"
+        },
+        {
+          "id": "C",
+          "text": "Objects, use cases and activities"
+        },
+        {
+          "id": "D",
+          "text": "Actors, use cases and associations"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-036",
+      "type": "A",
+      "points": 2,
+      "prompt": "The activity diagram below shows a simplified order processing procedure. Which of the following statements is correct for this flow? (2 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "The flow is not modeled correctly, since no condition (branch)should be present within a fork."
+        },
+        {
+          "id": "B",
+          "text": "The flow is modeled correctly: the goods branch as well as the export and domestic order branch are processed in parallel to one another."
+        },
+        {
+          "id": "C",
+          "text": "The flow is not modeled correctly, since the branches for the domestic and export orders must be consolidated via a diamond symbol."
+        },
+        {
+          "id": "D",
+          "text": "The flow is modeled correctly and the \"issue invoice\" activity is conducted after the \"compile goods\" activity."
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "imageAsset": "quizzes/quizlet-order-activity-diagram.svg",
+      "imageCaption": "Illustrative reconstruction from the prompt; it is not the missing original activity diagram.",
+      "reviewNote": "The original activity diagram was missing. This reconstruction illustrates the merge-vs-join issue described in the options, but cannot verify the original figure.",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-037",
+      "type": "A",
+      "points": 1,
+      "prompt": "For an interview, you have prepared a use case diagram for the system to be specified. You decide to talk through a use case in detail with the stakeholder. You receive very useful feedback which must now be documented. Which of the following means of expression is least suitable to document the details of a single use case? (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "State diagram"
+        },
+        {
+          "id": "B",
+          "text": "Activity diagram"
+        },
+        {
+          "id": "C",
+          "text": "Natural language"
+        },
+        {
+          "id": "D",
+          "text": "Context diagram"
+        },
+        {
+          "id": "E",
+          "text": "Class diagram"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-038",
+      "type": "A",
+      "points": 1,
+      "prompt": "In a meeting held with the goal of validating a set of requirements, two participants become involved in an in-depth discussion about the content of a requirement. One of the participants is of the opinion that the requirement must be realized as described, since the success of the product is otherwise jeopardized. The other party dissents and argues that this requirement cannot be realized technically as described. What is the best way for you to react to this situation? (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "You note both arguments and let the project manager make the decision."
+        },
+        {
+          "id": "B",
+          "text": "You invite all stakeholders to a workshop and try to reach agreement."
+        },
+        {
+          "id": "C",
+          "text": "You prefer the second opinion since you believe that the discussion makes no sense if the requirement cannot be realized."
+        },
+        {
+          "id": "D",
+          "text": "You get together with the affected stakeholders and attempt to reach an agreement on this."
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-039",
+      "type": "A",
+      "points": 1,
+      "prompt": "Within system development, conflicts continually arise between stakeholders with regard to the requirements. As a requirements engineer, how do you handle conflicts in projects best? (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "You resolve the conflict with the best resolution technique available to you."
+        },
+        {
+          "id": "B",
+          "text": "You analyze the conflict, try to bring about a solution with a suitable technique and document relevant information about the conflict."
+        },
+        {
+          "id": "C",
+          "text": "You ignore the conflict since this is a matter for project management."
+        },
+        {
+          "id": "D",
+          "text": "In order to resolve such conflicts you escalate them via the escalation paths defined in the project."
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-040",
+      "type": "P",
+      "points": 2,
+      "requiredCount": 5,
+      "prompt": "Assess the following statements about the natural language documentation of requirements in terms of being applicable or not applicable. (2 Points) List the ones that do not apply.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Natural language requirements cannot be misunderstood."
+        },
+        {
+          "id": "B",
+          "text": "Natural language requirements are mainly suitable for the behavioral perspective."
+        },
+        {
+          "id": "C",
+          "text": "Natural language requirements must be formulated in accordance with a template."
+        },
+        {
+          "id": "D",
+          "text": "Natural language is not a suitable means of expression for quality requirements."
+        },
+        {
+          "id": "E",
+          "text": "Natural language requirements are not a suitable means of communication for software architects and programmers."
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-041",
+      "type": "P",
+      "points": 2,
+      "requiredCount": 2,
+      "prompt": "As input for the system development, the Board of Directors of an automotive manufacturer has specified the following goals: 1. The infotainment system should be easy to operate. 2. The user must be able to operate the system without becoming distracted from the road traffic. 3. The system should function without an additional power source. 4. The system should be configurable for various models of car. With which two approaches can these goals be detailed and refined best? (2 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Clear specification of the goals with the help of use cases and the associated activity diagrams."
+        },
+        {
+          "id": "B",
+          "text": "Documentation of the goals in a sequence diagram."
+        },
+        {
+          "id": "C",
+          "text": "Decomposition of the goals with the help of goal trees, in order to obtain more concrete goals."
+        },
+        {
+          "id": "D",
+          "text": "Formulation of other goals, since the given goals are not feasible."
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-043",
+      "type": "P",
+      "points": 1,
+      "requiredCount": 3,
+      "prompt": "Which of the following elements are elements of a state diagram? (1 Point)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Event"
+        },
+        {
+          "id": "B",
+          "text": "Initial state"
+        },
+        {
+          "id": "C",
+          "text": "State transition"
+        },
+        {
+          "id": "D",
+          "text": "Interaction"
+        },
+        {
+          "id": "E",
+          "text": "Actor"
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-044",
+      "type": "P",
+      "points": 2,
+      "requiredCount": 4,
+      "prompt": "Requirements must be checked in terms of content, documentation and agreement. Indicate with regard to which statements are flase. (2 Points)",
+      "options": [
+        {
+          "id": "A",
+          "text": "Inspection is a checking technique which is very informal but which is therefore also very efficient."
+        },
+        {
+          "id": "B",
+          "text": "Field observation is the most frequently used checking technique."
+        },
+        {
+          "id": "C",
+          "text": "No more than one tester should ever be used for checking, as this may invite conflicts that hinder the project execution."
+        },
+        {
+          "id": "D",
+          "text": "Subject matter conflict must be resolved before checking, since there conflicts are not recognized in checking."
+        }
+      ],
+      "correctAnswer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-045",
+      "type": "A",
+      "points": 1,
+      "prompt": "A poor requirement is best described by which of the following sentences?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A poor requirement is vague."
+        },
+        {
+          "id": "B",
+          "text": "A poor requirement does not effectively communicate the desired behavior."
+        },
+        {
+          "id": "C",
+          "text": "A poor requirement is wrong."
+        },
+        {
+          "id": "D",
+          "text": "A poor requirement is incomplete."
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-046",
+      "type": "A",
+      "points": 1,
+      "prompt": "If a missing requirement was not discovered until the user acceptance test, what can we conclude about the requirements process.",
+      "options": [
+        {
+          "id": "A",
+          "text": "The analyst should have had more meetings with the users."
+        },
+        {
+          "id": "B",
+          "text": "The users didn't communicate effectively."
+        },
+        {
+          "id": "C",
+          "text": "The analysis techniques used were incorrect."
+        },
+        {
+          "id": "D",
+          "text": "The requirements review process was not sufficient."
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-047",
+      "type": "A",
+      "points": 1,
+      "prompt": "If a bug in the requirements is not detected until the code is implemented, which of the following is a cost that will be incurred?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Defects tracking time"
+        },
+        {
+          "id": "B",
+          "text": "Test automation development time"
+        },
+        {
+          "id": "C",
+          "text": "Test case development time"
+        },
+        {
+          "id": "D",
+          "text": "Test summary report time."
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-048",
+      "type": "A",
+      "points": 1,
+      "prompt": "If a requirement appears between the product requirement document and the detailed design document, what has happened?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The BA added the requirement"
+        },
+        {
+          "id": "B",
+          "text": "The development team added the requirement"
+        },
+        {
+          "id": "C",
+          "text": "The test team added the requirement"
+        },
+        {
+          "id": "D",
+          "text": "The customer added the requirement"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-049",
+      "type": "A",
+      "points": 1,
+      "prompt": "What is scope creep?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The natural progression of a project as the scope is defined."
+        },
+        {
+          "id": "B",
+          "text": "An evil monster that is waiting to destroy your project."
+        },
+        {
+          "id": "C",
+          "text": "The addition of requirements beyond the defined scope."
+        },
+        {
+          "id": "D",
+          "text": "A failure to define the context."
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-050",
+      "type": "A",
+      "points": 1,
+      "prompt": "What is likely to happen if there is no sufficient time allocated to requirement gathering?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The schedule for the project is likely to be exceeded due to rework"
+        },
+        {
+          "id": "B",
+          "text": "The schedule for the project is likely to be met due to less work."
+        },
+        {
+          "id": "C",
+          "text": "There will be no impact because the technical team will make the right decisions while implementing the project."
+        },
+        {
+          "id": "D",
+          "text": "The time saved in review sessions will create extra time for rework."
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-051",
+      "type": "A",
+      "points": 1,
+      "prompt": "As an analyst should you plan for scope changes?",
+      "options": [
+        {
+          "id": "A",
+          "text": "No, because planning for scope changes is the same as acknowledging the scope was not set."
+        },
+        {
+          "id": "B",
+          "text": "No, because it allows the development team to add more features."
+        },
+        {
+          "id": "C",
+          "text": "Yes, because the development team will add more features so we should allow for that."
+        },
+        {
+          "id": "D",
+          "text": "Yes, because the realities of the business may cause change to the scope."
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-052",
+      "type": "A",
+      "points": 1,
+      "prompt": "A new system (system X) will be developed. A new interface should be developed between system X and a legacy system (system Y). There won't be any other new interface to system X. System Y already has an interface with a very important other legacy system (system Z). Based on this information which statement is best describing the context of system X?",
+      "options": [
+        {
+          "id": "A",
+          "text": "System Y is in the system X context, system Z is in the grey zone of the system X."
+        },
+        {
+          "id": "B",
+          "text": "System Y and system Z is in the grey zone of system X context."
+        },
+        {
+          "id": "C",
+          "text": "System Y and system Z is the system X context."
+        },
+        {
+          "id": "D",
+          "text": "System Y is in the system X context, system Z is in the irrelevant environment."
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-053",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is a correct statement about non-functional requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Non-functional requirements describe \"how\" the system should work."
+        },
+        {
+          "id": "B",
+          "text": "Non-functional requirements describe actions the system could take that would make it cease to function."
+        },
+        {
+          "id": "C",
+          "text": "Non-functional requirements are QOS requirements."
+        },
+        {
+          "id": "D",
+          "text": "Non-functional requirements do not exist. All requirements are functional."
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-054",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is a correct statement about user requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "User requirements describe the user interface."
+        },
+        {
+          "id": "B",
+          "text": "User requirements define the performance and load metrics the system must meet."
+        },
+        {
+          "id": "C",
+          "text": "User requirements describe the needs of a particular stakeholder or a set of stakeholders."
+        },
+        {
+          "id": "D",
+          "text": "User requirements describe the reporting interface of a system."
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-055",
+      "type": "A",
+      "points": 1,
+      "prompt": "You are working to create requirements that are testable. Consider the following statements regarding writing requirements. I. Each requirement must clearly state who can verify if the implementation was done correctly. II. Requires clear understanding and a clear statement of the details of the requirement. III. Requirements have both functional and non-functional aspects. IV. Customers sometimes have nebulous \"feelings\" regarding requirements. V. Requirements sometimes are not feasible within budget. Which of the following statements is true?",
+      "options": [
+        {
+          "id": "A",
+          "text": "II. and III. are important for creating testable requirements."
+        },
+        {
+          "id": "B",
+          "text": "I. II, III. and V. are important for creating testable requirements."
+        },
+        {
+          "id": "C",
+          "text": "I., II and III are important for testability."
+        },
+        {
+          "id": "D",
+          "text": "Only II is important for testability."
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-056",
+      "type": "A",
+      "points": 1,
+      "prompt": "Consider the following requirement: The first page of report Y, using the default selection criteria, will be displayed for the user within 5 seconds of the request submittal when there are no other users on the system. This is an example of which type of requirement?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Non-functional"
+        },
+        {
+          "id": "B",
+          "text": "Constraint"
+        },
+        {
+          "id": "C",
+          "text": "Usability"
+        },
+        {
+          "id": "D",
+          "text": "Reporting"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-057",
+      "type": "A",
+      "points": 1,
+      "prompt": "Consider the following statements: I. Business requirements describe the high level reasons for developing the system. II. Implementation requirements describe how the system fulfills a defined business function. III. User requirements are sometimes called functional requirements. IV. Most users think in terms of functions when describing a system. V. Use case are often used to describe the user requirements. Which of the following statements is true?",
+      "options": [
+        {
+          "id": "A",
+          "text": "I., III., IV. are true, II. and V. are false"
+        },
+        {
+          "id": "B",
+          "text": "Only I. is true"
+        },
+        {
+          "id": "C",
+          "text": "Only I., IV. and V. are true"
+        },
+        {
+          "id": "D",
+          "text": "I, III, IV and V are true"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-058",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following requirements techniques is commonly used to describe user requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "User stories"
+        },
+        {
+          "id": "B",
+          "text": "Data flow diagrams"
+        },
+        {
+          "id": "C",
+          "text": "Control flow diagrams"
+        },
+        {
+          "id": "D",
+          "text": "Entity relationship diagrams"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-059",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is a true statement regarding data requirements for a system?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The requirements must cover all data handles by the system even if it is initiated and/or deleted outside the defined system."
+        },
+        {
+          "id": "B",
+          "text": "The requirements should describe only the data that is contained within the system (initiated and deleted within the defined system)"
+        },
+        {
+          "id": "C",
+          "text": "The requirements should describe only the data that is initiated within the system."
+        },
+        {
+          "id": "D",
+          "text": "The requirements should describe only the data that is deleted within the system."
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-060",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following best describes the acceptance criteria for a data requirement?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Proper initiation and termination of the data"
+        },
+        {
+          "id": "B",
+          "text": "Proper presentation of the data"
+        },
+        {
+          "id": "C",
+          "text": "Proper initiation, termination and handling of in-process data"
+        },
+        {
+          "id": "D",
+          "text": "Proper security of the data during processing"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-061",
+      "type": "A",
+      "points": 1,
+      "prompt": "Assume you are writing requirements of a new feature. This function is part of a SOA package that must provide extremely fast and extremely accurate calculation of profit or loss on various possible stock trade transactions. This package is used by a family of applications that allow large institutional traders to make high-value trades that take advantage of small differences in buying and selling prices of stock. What type of requirements would you expect least?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Maintainability"
+        },
+        {
+          "id": "B",
+          "text": "Accuracy"
+        },
+        {
+          "id": "C",
+          "text": "Performance"
+        },
+        {
+          "id": "D",
+          "text": "Interoperability"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-062",
+      "type": "A",
+      "points": 1,
+      "prompt": "Consider the following: I. Reliability II. Usability III. Portability From the above list which is the least important quality characteristic when specifying requirements.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Reliability is the least important"
+        },
+        {
+          "id": "B",
+          "text": "Usability is the least important"
+        },
+        {
+          "id": "C",
+          "text": "Functional requirements are the most important, these are less important non-functional requirements"
+        },
+        {
+          "id": "D",
+          "text": "Each system is different, you can't order the requirement types generally by importance"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-063",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is true regarding the interfaces of the system being defined?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Interfaces changes can affect the system that is being defined so they must all be defined"
+        },
+        {
+          "id": "B",
+          "text": "It isn't important because interfaces rarely exist"
+        },
+        {
+          "id": "C",
+          "text": "Only the data interfaces must be defined"
+        },
+        {
+          "id": "D",
+          "text": "Only interfaces to third party software must be defined because we can't control when it may change"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-064",
+      "type": "A",
+      "points": 1,
+      "prompt": "When testing data that is transferred between systems via an interface, it's usually important to define and test which of the following?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Test the data only after the transfer"
+        },
+        {
+          "id": "B",
+          "text": "Test the data before and after the transfer"
+        },
+        {
+          "id": "C",
+          "text": "Test the data before, during and after the transfer"
+        },
+        {
+          "id": "D",
+          "text": "Test the data only as it is used by the system being defined"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-065",
+      "type": "A",
+      "points": 1,
+      "prompt": "Quality of service requirements are a subset of which types of requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Functional requirements"
+        },
+        {
+          "id": "B",
+          "text": "Non-functional requirements"
+        },
+        {
+          "id": "C",
+          "text": "Behavioral requirements"
+        },
+        {
+          "id": "D",
+          "text": "Performance requirements"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-066",
+      "type": "A",
+      "points": 1,
+      "prompt": "\"Restrictions or limitations on the solutions\" is a definition of which of the following terms?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Interface"
+        },
+        {
+          "id": "B",
+          "text": "Risk"
+        },
+        {
+          "id": "C",
+          "text": "Assumption"
+        },
+        {
+          "id": "D",
+          "text": "Constraint"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-067",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is the best reason assumptions must be clearly documented during the requirement analysis?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Although everyone will make the same assumptions, they should be documented for later review."
+        },
+        {
+          "id": "B",
+          "text": "Constraints may change over time"
+        },
+        {
+          "id": "C",
+          "text": "The huge risks of the assumptions must be documented"
+        },
+        {
+          "id": "D",
+          "text": "A condition may be true right now, but may change and cause negative impact"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-068",
+      "type": "A",
+      "points": 1,
+      "prompt": "Assume a browser.based application that helps huge number of individuals track and manage their investment portfolios. Each user's data is stored in a central repository, and users log in to authenticate themselves prior to accessing their portfolio information. The business analysts have supplied a first draft of the requirement specification. It is incomplete at this time, but includes two main sections: detailed use cases and a section describing non-functional behavior. Which statement is most true related to categorizing requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is not necessary categorizing the requirements of a system like this."
+        },
+        {
+          "id": "B",
+          "text": "Only use cases are important in the first draft of the specification."
+        },
+        {
+          "id": "C",
+          "text": "It is a good start to categorizing the requirements as use cases and non-functional items, but it is practical to refine the groupings later."
+        },
+        {
+          "id": "D",
+          "text": "The best technique is categorizing the requirements in the specification according to IOS 9126 or ISO 25010"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-069",
+      "type": "A",
+      "points": 1,
+      "prompt": "What happens when you overlook a source of requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "You will hurt the feelings of people you didn't talk to"
+        },
+        {
+          "id": "B",
+          "text": "Your requirements may be incomplete or unacceptable"
+        },
+        {
+          "id": "C",
+          "text": "It's not a problem because you can add any missed requirements later"
+        },
+        {
+          "id": "D",
+          "text": "Those people should be excluded from the acceptance test"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-070",
+      "type": "A",
+      "points": 1,
+      "prompt": "At what point in the project should stakeholders be involved?",
+      "options": [
+        {
+          "id": "A",
+          "text": "During requirements elicitation"
+        },
+        {
+          "id": "B",
+          "text": "Throughout the development phases"
+        },
+        {
+          "id": "C",
+          "text": "During acceptance testing"
+        },
+        {
+          "id": "D",
+          "text": "Throughout the entire project"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-071",
+      "type": "A",
+      "points": 1,
+      "prompt": "Consider the following: I. Complete the project on budget II. Get the best input to the requirements possible III. Produce complete, clear, correct and consistent requirements IV. Involve the testers early V. Extract the customer's true needs Which of the following statements is true?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Only II, III and V are goals of the elicitation process"
+        },
+        {
+          "id": "B",
+          "text": "Only II is a goal of the elicitation process"
+        },
+        {
+          "id": "C",
+          "text": "Only III and V are goals of the elicitation process"
+        },
+        {
+          "id": "D",
+          "text": "All of these are goals of the elicitation process"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-072",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is the best definition of the elicitation process?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Techniques used to document the requirements"
+        },
+        {
+          "id": "B",
+          "text": "The process of gathering use cases, user scenarios and user stories"
+        },
+        {
+          "id": "C",
+          "text": "Diagramming and modelling techniques used to characterize the requirements"
+        },
+        {
+          "id": "D",
+          "text": "Methods by which the requirements are characterized and refined"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-073",
+      "type": "A",
+      "points": 1,
+      "prompt": "You are working with a group of stakeholders who get along well and respect each other. This is a creative group who tend toward informal interaction. You determined that they have knowledge regarding the requirements you need to elicit. Which of the following would be the best technique to use with this group?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Brainstorming"
+        },
+        {
+          "id": "B",
+          "text": "Closed-ended interview questions"
+        },
+        {
+          "id": "C",
+          "text": "Open-ended interview questions"
+        },
+        {
+          "id": "D",
+          "text": "Survey"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-074",
+      "type": "A",
+      "points": 1,
+      "prompt": "You are working on a new product and need information from a group of potential customers regarding their feature ideas. Which of the following is the least suitable technique to use with this situation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Change of perspective"
+        },
+        {
+          "id": "B",
+          "text": "Brainstorming"
+        },
+        {
+          "id": "C",
+          "text": "System archaeology"
+        },
+        {
+          "id": "D",
+          "text": "Analogy technique"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-075",
+      "type": "A",
+      "points": 1,
+      "prompt": "You are conducting an elicitation session during which you will elicit, analyze and document the requirements for a new project. Which elicitation technique will work best to meet this goal?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Brainstorming"
+        },
+        {
+          "id": "B",
+          "text": "Requirements workshop"
+        },
+        {
+          "id": "C",
+          "text": "Perspective-based reading"
+        },
+        {
+          "id": "D",
+          "text": "Open-ended interviews"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-076",
+      "type": "A",
+      "points": 1,
+      "prompt": "You are working on a project for which you must elicit the requirements from a large set of potential users. You have limited time for this effort and must be able to compile information quickly. Which elicitation technique would be best for this project?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Closed-ended questionnaire"
+        },
+        {
+          "id": "B",
+          "text": "Closed-ended interview"
+        },
+        {
+          "id": "C",
+          "text": "Brainstorming"
+        },
+        {
+          "id": "D",
+          "text": "Prototyping"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-077",
+      "type": "A",
+      "points": 1,
+      "prompt": "You need to clarify the boundaries of the system you are defining. Which of the following would be the best technique to use to accomplish this task?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Interface analysis"
+        },
+        {
+          "id": "B",
+          "text": "Closed-ended interview"
+        },
+        {
+          "id": "C",
+          "text": "Brainstorming"
+        },
+        {
+          "id": "D",
+          "text": "Mind-mapping"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-078",
+      "type": "A",
+      "points": 1,
+      "prompt": "Your developers have obtained a version of the code from a legacy system you are trying to replace. There is no documentation for this system and everyone who worked on it has left the company. The developers have decided they might be able to decompile the code. This is an example of which technique?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Interface analysis"
+        },
+        {
+          "id": "B",
+          "text": "Doing something that will get them arrested for copyright infringement"
+        },
+        {
+          "id": "C",
+          "text": "Reverse-engineering"
+        },
+        {
+          "id": "D",
+          "text": "This is not a technique and cannot be used for requirement engineering"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-079",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is the three groups into which Kano groups requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Must, should, could"
+        },
+        {
+          "id": "B",
+          "text": "Necessary, optional, fun"
+        },
+        {
+          "id": "C",
+          "text": "Low, medium and high priority"
+        },
+        {
+          "id": "D",
+          "text": "Standard/base, performance, excitement"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-080",
+      "type": "A",
+      "points": 1,
+      "prompt": "What is an excitement factor?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Something that makes the user angry with the software"
+        },
+        {
+          "id": "B",
+          "text": "Something that makes the user want to use the software"
+        },
+        {
+          "id": "C",
+          "text": "Something that makes the software perform effectively"
+        },
+        {
+          "id": "D",
+          "text": "There is no such thing; everyone knows software is not exciting"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-081",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which statement is wrong regarding to the documentation format of requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Natural language is easy to use, generally understandable, easy for non-technical users to comprehend."
+        },
+        {
+          "id": "B",
+          "text": "Natural language can be non-specific, words can have multiple interpretations, can be voluminous."
+        },
+        {
+          "id": "C",
+          "text": "Models can portray complex information in a compact form and can be harder to review for completeness."
+        },
+        {
+          "id": "D",
+          "text": "Models may require expertise to understand the model itself, may not be suitable for non-technical readers, may require training for the writer, selected model may not be suitable for the problem/project."
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-082",
+      "type": "A",
+      "points": 1,
+      "prompt": "When analyzing the functional requirements why does uniqueness matter?",
+      "options": [
+        {
+          "id": "A",
+          "text": "If a requirement is stated in multiple places it is easy to update one and not the others and create inconsistency."
+        },
+        {
+          "id": "B",
+          "text": "We want our requirements documents to be as short as possible and duplicating requirements lengthens the documents."
+        },
+        {
+          "id": "C",
+          "text": "If a requirement is only stated in one place, it can't conflict with any other requirements"
+        },
+        {
+          "id": "D",
+          "text": "Uniqueness only matters for non-functional requirements."
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-083",
+      "type": "A",
+      "points": 1,
+      "prompt": "In what way does a glossary help to reduce redundancy?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It distinguishes between homonyms and synonyms."
+        },
+        {
+          "id": "B",
+          "text": "It establishes the one correct term to be used to represent an item."
+        },
+        {
+          "id": "C",
+          "text": "By defining the requirements in the glossary, they don't need to appear anywhere else."
+        },
+        {
+          "id": "D",
+          "text": "The glossary defines every possible term for the same item so you only have to look one place to find all the definitions."
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-084",
+      "type": "A",
+      "points": 1,
+      "prompt": "You have found that a term you defined at the beginning of the requirement process is actually used to represent two different things. What should you do?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Update the definition to show the actual usage of the term."
+        },
+        {
+          "id": "B",
+          "text": "Do not update the glossary because the current requirements are based on it as it is"
+        },
+        {
+          "id": "C",
+          "text": "Update the definition and then review the requirements that may have been affected"
+        },
+        {
+          "id": "D",
+          "text": "Pick one meaning for the term and document that one"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-085",
+      "type": "A",
+      "points": 1,
+      "prompt": "When should requirements documentation start?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Before the analysis starts"
+        },
+        {
+          "id": "B",
+          "text": "While the analysis is still occurring"
+        },
+        {
+          "id": "C",
+          "text": "Only after the analysis is complete"
+        },
+        {
+          "id": "D",
+          "text": "Documenting the requirements is not associated with the requirements analysis"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-086",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which one is not a problem described in the transformational process?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ambiguous process verbs"
+        },
+        {
+          "id": "B",
+          "text": "Personal pronouns without reference index"
+        },
+        {
+          "id": "C",
+          "text": "Ambiguous quantity adverbs"
+        },
+        {
+          "id": "D",
+          "text": "Changing nouns to verbs"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-087",
+      "type": "A",
+      "points": 1,
+      "prompt": "What are the most important quality criteria for requirements document?",
+      "options": [
+        {
+          "id": "A",
+          "text": "IEEE 29148 reference structure accordance"
+        },
+        {
+          "id": "B",
+          "text": "Agreed, unambiguous, necessary, consistent, verifiable, feasible, traceable, complete, understandable."
+        },
+        {
+          "id": "C",
+          "text": "Short sentences and paragraphs and formulate only one requirement per sentence."
+        },
+        {
+          "id": "D",
+          "text": "Unambiguity and consistency, clear structure, modifiability and extensibility, completeness, traceability"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-088",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which one is the least important reason for documenting requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Developers can implement the forms based on the screen prototypes defined in the specification."
+        },
+        {
+          "id": "B",
+          "text": "Requirements are long-lasting and can be used throughout the entire life-cycle"
+        },
+        {
+          "id": "C",
+          "text": "Requirements are often legally relevant"
+        },
+        {
+          "id": "D",
+          "text": "Requirements should be accessible to all project members"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-089",
+      "type": "A",
+      "points": 1,
+      "prompt": "What is the proper use of the IEEE template?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Strict accordance"
+        },
+        {
+          "id": "B",
+          "text": "Minor tailoring"
+        },
+        {
+          "id": "C",
+          "text": "As a guideline to be adapted to your particular situation"
+        },
+        {
+          "id": "D",
+          "text": "As a regulatory requirement for all industries"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-090",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is a rule of prioritization?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The stakeholders will always agree"
+        },
+        {
+          "id": "B",
+          "text": "Priorities may change during the project"
+        },
+        {
+          "id": "C",
+          "text": "Priorities must be set by the development group"
+        },
+        {
+          "id": "D",
+          "text": "Priorities are not necessary"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-091",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is a true statement about the identification of requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Requirement identifiers should include the analyst's initials"
+        },
+        {
+          "id": "B",
+          "text": "Requirements do not need identifiers"
+        },
+        {
+          "id": "C",
+          "text": "Each requirement must have a unique identifier"
+        },
+        {
+          "id": "D",
+          "text": "Requirement identifiers will change during the project"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-092",
+      "type": "A",
+      "points": 1,
+      "prompt": "What is described in the class methods definitions?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Data"
+        },
+        {
+          "id": "B",
+          "text": "Functionality"
+        },
+        {
+          "id": "C",
+          "text": "Attributes"
+        },
+        {
+          "id": "D",
+          "text": "Business rules"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-093",
+      "type": "A",
+      "points": 1,
+      "prompt": "What are the main components of an entity relationship diagram?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Entities, attributes, identifiers and relationships"
+        },
+        {
+          "id": "B",
+          "text": "Attributes and methods"
+        },
+        {
+          "id": "C",
+          "text": "Data, transitions, storage"
+        },
+        {
+          "id": "D",
+          "text": "Database tables and fields"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-094",
+      "type": "A",
+      "points": 1,
+      "prompt": "You are reading a state transition diagram and have found the following identifier: Payment received[invalid]/error message. What is the correct interpretation of this label on a transition?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Payment received is the event, invalid is the condition and error message is the action that will be taken"
+        },
+        {
+          "id": "B",
+          "text": "The error message is the event, invalid is the condition and payment received is the action that will be taken"
+        },
+        {
+          "id": "C",
+          "text": "Payment received is an invalid event at this point so an error message is the action that will be taken"
+        },
+        {
+          "id": "D",
+          "text": "This notation is incorrect for a state transition diagram"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-095",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is not a valid class relation in a class diagram?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Composition"
+        },
+        {
+          "id": "B",
+          "text": "Merge"
+        },
+        {
+          "id": "C",
+          "text": "Aggregation"
+        },
+        {
+          "id": "D",
+          "text": "Association"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-096",
+      "type": "A",
+      "points": 1,
+      "prompt": "What is the purpose of the alternate flows in a use case?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To show the positive path flow that users should follow"
+        },
+        {
+          "id": "B",
+          "text": "To show different users might use the system"
+        },
+        {
+          "id": "C",
+          "text": "To show the flows other that the main path to the goal"
+        },
+        {
+          "id": "D",
+          "text": "To show the error conditions"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-097",
+      "type": "A",
+      "points": 1,
+      "prompt": "What is the role of the actor in a use case diagram?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The systems that interact with each other"
+        },
+        {
+          "id": "B",
+          "text": "The use cases that interact with other use cases"
+        },
+        {
+          "id": "C",
+          "text": "The people that interact with the system"
+        },
+        {
+          "id": "D",
+          "text": "The people and systems that interact"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-098",
+      "type": "A",
+      "points": 1,
+      "prompt": "Consider the following activities: I. Identify II. Resolve III. Document in the requirements issue log IV. Escalate to management and project manager V. Document resolution Which of the above must occur in conflict resolution prior to the implementation of requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "I, II and III only"
+        },
+        {
+          "id": "B",
+          "text": "I, III, IV only"
+        },
+        {
+          "id": "C",
+          "text": "I, II, III, V only"
+        },
+        {
+          "id": "D",
+          "text": "IV only"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-099",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is a true statement regarding conflict in requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Only immature organizations will experience conflicts"
+        },
+        {
+          "id": "B",
+          "text": "Conflicts only occur when the analyst has not done sufficient elicitation"
+        },
+        {
+          "id": "C",
+          "text": "Conflicts are easy resolved with open discussion"
+        },
+        {
+          "id": "D",
+          "text": "Conflicts should be expected and planned for"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-100",
+      "type": "A",
+      "points": 1,
+      "prompt": "If the purpose of our review is to determine if we are building the right product, what are we focused on?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Validation"
+        },
+        {
+          "id": "B",
+          "text": "Verification"
+        },
+        {
+          "id": "C",
+          "text": "Usability"
+        },
+        {
+          "id": "D",
+          "text": "Correctness of design"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-101",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following conflict resolution techniques is the least suitable for conflicts between clients and developers regarding a value conflict in requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Overruling"
+        },
+        {
+          "id": "B",
+          "text": "Plus-minus-interesting"
+        },
+        {
+          "id": "C",
+          "text": "Compromise"
+        },
+        {
+          "id": "D",
+          "text": "Decision matrix"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-102",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is a disadvantage to conducting reviews in emails?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It's easy and fast"
+        },
+        {
+          "id": "B",
+          "text": "People can allocate their time when it's convenient"
+        },
+        {
+          "id": "C",
+          "text": "There is little opportunity for interaction among the reviewers"
+        },
+        {
+          "id": "D",
+          "text": "No response indicates agreement"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-103",
+      "type": "A",
+      "points": 1,
+      "prompt": "If the team has an aversion to processes, which type of review will probably be the most successful?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Walkthrough"
+        },
+        {
+          "id": "B",
+          "text": "Technical review"
+        },
+        {
+          "id": "C",
+          "text": "Inspection"
+        },
+        {
+          "id": "D",
+          "text": "Audit"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-104",
+      "type": "A",
+      "points": 1,
+      "prompt": "If there is a need to gather metrics from the review, which type of review will probably be the most effective?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Walkthrough"
+        },
+        {
+          "id": "B",
+          "text": "Technical review"
+        },
+        {
+          "id": "C",
+          "text": "Inspection"
+        },
+        {
+          "id": "D",
+          "text": "Audit"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-105",
+      "type": "A",
+      "points": 1,
+      "prompt": "When you obtain a sign-off indicating that the requirements are clear, can be implemented and tested, what type of sign-of do you have?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Customer"
+        },
+        {
+          "id": "B",
+          "text": "Technical team"
+        },
+        {
+          "id": "C",
+          "text": "Project manager"
+        },
+        {
+          "id": "D",
+          "text": "Management"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-106",
+      "type": "A",
+      "points": 1,
+      "prompt": "If most of the stakeholders have signed off on the requirements, but now one of the customer representatives wants a change that will result in increased scope, what should you do?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ignore the troublemaker and hope they go away"
+        },
+        {
+          "id": "B",
+          "text": "Document the issue and re-open the review sessions"
+        },
+        {
+          "id": "C",
+          "text": "Escalate to the project manager"
+        },
+        {
+          "id": "D",
+          "text": "Go forward with the approval process without this individual"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-107",
+      "type": "A",
+      "points": 1,
+      "prompt": "When should traceability start and stop for a requirement?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It should start when the requirement is turned over to the implementation team and end when the implementation team has completed all work on the requirement."
+        },
+        {
+          "id": "B",
+          "text": "It should start when the requirement is implemented and end when the requirement is tested."
+        },
+        {
+          "id": "C",
+          "text": "It should start when the requirement is first documented and end when the requirements are ready for implementation."
+        },
+        {
+          "id": "D",
+          "text": "It should start when the requirement is first discovered and end with the verification of implementation by the test team."
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-108",
+      "type": "A",
+      "points": 1,
+      "prompt": "Consider the following: I. Impact analysis II. Verification of implementation III. Verification of adherence to standards IV. Verification of test V. Origin of the requirement Which of the above can be determined through good traceability of the requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "I and III only"
+        },
+        {
+          "id": "B",
+          "text": "I, III, IV only"
+        },
+        {
+          "id": "C",
+          "text": "All of the above"
+        },
+        {
+          "id": "D",
+          "text": "V only"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-109",
+      "type": "A",
+      "points": 1,
+      "prompt": "You neglected to track the origin of your requirements when you were gathering them. As a result, you don't have a traceability matrix. You have now been asked by your management to produce the complete matrix showing the origin and status of each requirement. Will this be a significant task for you?",
+      "options": [
+        {
+          "id": "A",
+          "text": "No, it won't take long to recreate the origin information"
+        },
+        {
+          "id": "B",
+          "text": "This is likely to be a difficult task because determining the origin of each requirement will require sifting through all the elicitation notes"
+        },
+        {
+          "id": "C",
+          "text": "Since all requirement have been implemented, this is not necessary"
+        },
+        {
+          "id": "D",
+          "text": "The developers will track the origin of each requirement as they do the implementation"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-110",
+      "type": "A",
+      "points": 1,
+      "prompt": "Should each requirement have a version identifier?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Requirements are not software and don't need version identifiers"
+        },
+        {
+          "id": "B",
+          "text": "Version identifiers should be associated with the code, not the requirement"
+        },
+        {
+          "id": "C",
+          "text": "Requirements are likely to change and should have a version identifier so the changes can be tracked"
+        },
+        {
+          "id": "D",
+          "text": "Version identifiers should be at the SRS level only, not at the individual requirements level"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-111",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is a true statement regarding configuration management?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Configuration management is required for change management."
+        },
+        {
+          "id": "B",
+          "text": "Configuration management is required for version control."
+        },
+        {
+          "id": "C",
+          "text": "Configuration management is required only at the SRS level."
+        },
+        {
+          "id": "D",
+          "text": "Configuration management is used to manage the configuration of the software, not the requirements."
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-112",
+      "type": "A",
+      "points": 1,
+      "prompt": "Consider the following activities: I. Creating the quality risk analysis II. Reviewing test plans III. Conducting the functional testing IV. Conducting the non-functional testing V. Writing test cases In which of the above should the analyst participate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "I and II only"
+        },
+        {
+          "id": "B",
+          "text": "I, III, IV only"
+        },
+        {
+          "id": "C",
+          "text": "II and V only"
+        },
+        {
+          "id": "D",
+          "text": "I only"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-113",
+      "type": "A",
+      "points": 1,
+      "prompt": "During implementation, who should the analyst represent?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The documentation team"
+        },
+        {
+          "id": "B",
+          "text": "The test team"
+        },
+        {
+          "id": "C",
+          "text": "The development team"
+        },
+        {
+          "id": "D",
+          "text": "The customer"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-114",
+      "type": "A",
+      "points": 1,
+      "prompt": "Should multiple views of the requirements be prepared and maintained?",
+      "options": [
+        {
+          "id": "A",
+          "text": "No"
+        },
+        {
+          "id": "B",
+          "text": "Only as needed to increase stakeholder understanding"
+        },
+        {
+          "id": "C",
+          "text": "Yes, but only if the views are maintained by the stakeholders"
+        },
+        {
+          "id": "D",
+          "text": "Yes, but only if the views are maintained by the project manager"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-115",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is a true statement regarding requirement management tools?",
+      "options": [
+        {
+          "id": "A",
+          "text": "They will work for all types of users"
+        },
+        {
+          "id": "B",
+          "text": "They can be used to facilitate capturing, organizing, presenting and tracking requirements"
+        },
+        {
+          "id": "C",
+          "text": "They are most effective at presenting the requirements once the requirements have been gathered"
+        },
+        {
+          "id": "D",
+          "text": "They can produce the UML code"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-116",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is not an expected feature of a requirement management tool?",
+      "options": [
+        {
+          "id": "A",
+          "text": "generating specification form the individual requirements"
+        },
+        {
+          "id": "B",
+          "text": "Managing traceability between the individual requirements"
+        },
+        {
+          "id": "C",
+          "text": "Checking the individual requirements adherence to models"
+        },
+        {
+          "id": "D",
+          "text": "Maintaining unique identifier for the individual requirements"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-117",
+      "type": "A",
+      "points": 1,
+      "prompt": "What happens to the cost of a bug the longer it goes undetected and unfixed?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It becomes less expensive to the project"
+        },
+        {
+          "id": "B",
+          "text": "It becomes less important to the project"
+        },
+        {
+          "id": "C",
+          "text": "It becomes more expensive to the project"
+        },
+        {
+          "id": "D",
+          "text": "The cost stays the same regardless of when the problem is detected and fixed"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-118",
+      "type": "A",
+      "points": 1,
+      "prompt": "Why is ti difficult to quantify the cost of a bug found in production?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Bugs are not found in production, only during testing"
+        },
+        {
+          "id": "B",
+          "text": "The technical support people don't convey the information to the development team"
+        },
+        {
+          "id": "C",
+          "text": "Costs for maintenance releases and hot fixes are usually not tracked"
+        },
+        {
+          "id": "D",
+          "text": "There are many intangible costs associated with a production problem"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-119",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is an example of how good engineering practices can help avoid project problems?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Keeping the project on budget"
+        },
+        {
+          "id": "B",
+          "text": "Eliminating re-work"
+        },
+        {
+          "id": "C",
+          "text": "Forming a cohesive team"
+        },
+        {
+          "id": "D",
+          "text": "Eliminating the chance of failure"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-120",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following activities usually spans the entire project?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Brainstorming"
+        },
+        {
+          "id": "B",
+          "text": "Enterprise analysis"
+        },
+        {
+          "id": "C",
+          "text": "Requirement management"
+        },
+        {
+          "id": "D",
+          "text": "Context diagramming"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-121",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is considered an advanced analyst skill?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Communicating"
+        },
+        {
+          "id": "B",
+          "text": "Brainstorming"
+        },
+        {
+          "id": "C",
+          "text": "Interviewing"
+        },
+        {
+          "id": "D",
+          "text": "Negotiating"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-122",
+      "type": "A",
+      "points": 1,
+      "prompt": "Consider the following list: I. The type and domain of the product II. The environment of the project III. The expectation of the project team regarding the completeness and level of detail of the requirements IV. Any number of social and human interaction factors V. Work and business environment Which of the above influence the success of the project and must be considered as part of enterprise analysis?",
+      "options": [
+        {
+          "id": "A",
+          "text": "All of the above are influencing factors"
+        },
+        {
+          "id": "B",
+          "text": "Only V is an influencing factor"
+        },
+        {
+          "id": "C",
+          "text": "Only III and V are influencing factors"
+        },
+        {
+          "id": "D",
+          "text": "Only I, II and III are influencing factors"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-123",
+      "type": "A",
+      "points": 1,
+      "prompt": "Suitability of the software to fulfill the needs of the user is an example of a quality attribute of what type of requirement?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Functional"
+        },
+        {
+          "id": "B",
+          "text": "Non-functional"
+        },
+        {
+          "id": "C",
+          "text": "Performance"
+        },
+        {
+          "id": "D",
+          "text": "Quality of Service"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-124",
+      "type": "A",
+      "points": 1,
+      "prompt": "The acceptance criteria for a use case at a minimum must include which of the following?",
+      "options": [
+        {
+          "id": "A",
+          "text": "One test case for the main path"
+        },
+        {
+          "id": "B",
+          "text": "One test case for the alternate path"
+        },
+        {
+          "id": "C",
+          "text": "One test case for the main path and one for each alternate path"
+        },
+        {
+          "id": "D",
+          "text": "Test case for all the alternate paths"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-125",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is an important aspect of the data requirements for a system?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Flow charts"
+        },
+        {
+          "id": "B",
+          "text": "Control flow diagrams"
+        },
+        {
+          "id": "C",
+          "text": "Glossary"
+        },
+        {
+          "id": "D",
+          "text": "Reporting requirements"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-126",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is one of the difficulties with determining the acceptance criteria for non-functional requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "No one thinks about non-functional requirements until they are missing"
+        },
+        {
+          "id": "B",
+          "text": "You can't define acceptance criteria for non-functional requirements"
+        },
+        {
+          "id": "C",
+          "text": "Non-functional requirements are sometimes not clearly specified or assumed to be \"understood\""
+        },
+        {
+          "id": "D",
+          "text": "The acceptable of the non-functional system can only be determined by the end user"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-127",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is a particular concern for third party interfaces?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Third party interfaces are the same as interfaces to internal products"
+        },
+        {
+          "id": "B",
+          "text": "Third party interfaces don't need to be defined because they are external to our product"
+        },
+        {
+          "id": "C",
+          "text": "Third party interfaces are controlled by maintenance agreements"
+        },
+        {
+          "id": "D",
+          "text": "Third party interfaces may have been customized and so may have particular service level agreements that could affect our product"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-128",
+      "type": "A",
+      "points": 1,
+      "prompt": "If the performance requirements are not specified correctly and the resultant software is too slow, what is likely to happen?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The software will be accepted as is"
+        },
+        {
+          "id": "B",
+          "text": "The software will be rejected for not being exciting"
+        },
+        {
+          "id": "C",
+          "text": "The software will not be used"
+        },
+        {
+          "id": "D",
+          "text": "The software will probably be rejected as providing insufficient performance"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-129",
+      "type": "A",
+      "points": 1,
+      "prompt": "Why should functional requirements dictate the design of the solution?",
+      "options": [
+        {
+          "id": "A",
+          "text": "So the solution will be ensured to meet the functional requirements"
+        },
+        {
+          "id": "B",
+          "text": "So the developers stay within the scope of the requirements and scope creep is prevented"
+        },
+        {
+          "id": "C",
+          "text": "Because the analyst is best-suited to see the overall solution environment"
+        },
+        {
+          "id": "D",
+          "text": "The functional requirements should not dictate the design of the solution"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-130",
+      "type": "A",
+      "points": 1,
+      "prompt": "Regarding the acceptability of a system for the users, which is a true statement about quality of service requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "QoS requirements significantly influence acceptability"
+        },
+        {
+          "id": "B",
+          "text": "QoS requirements influence acceptability, but not as much as the excitement factors"
+        },
+        {
+          "id": "C",
+          "text": "QoS requirements influence acceptability, but not as much as the usability factors"
+        },
+        {
+          "id": "D",
+          "text": "QoS requirements don't influence acceptability because the user doesn't see the QoS factors in the implemented system"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-131",
+      "type": "A",
+      "points": 1,
+      "prompt": "MTTR is used to measure which of the following attributes?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Functionality"
+        },
+        {
+          "id": "B",
+          "text": "Reliability"
+        },
+        {
+          "id": "C",
+          "text": "Portability"
+        },
+        {
+          "id": "D",
+          "text": "Efficiency"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reviewNote": "MTTR (mean time to repair) is commonly treated as a maintainability measure, while the supplied key marks reliability and maintainability is not an option. Confirm the intended IREB taxonomy/key against the original source.",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-132",
+      "type": "A",
+      "points": 1,
+      "prompt": "Step-by-step descriptions of how the proposed system will operate and interact with its users and interfaces within a defined set of circumstances is a description of what type of scenario?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Functional"
+        },
+        {
+          "id": "B",
+          "text": "Performance"
+        },
+        {
+          "id": "C",
+          "text": "Operational"
+        },
+        {
+          "id": "D",
+          "text": "Non-functional"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-133",
+      "type": "A",
+      "points": 1,
+      "prompt": "When should usability be added to the product?",
+      "options": [
+        {
+          "id": "A",
+          "text": "After the functionality has been implemented and verified"
+        },
+        {
+          "id": "B",
+          "text": "After the non-functional capabilities have been implemented and verified"
+        },
+        {
+          "id": "C",
+          "text": "After the user stories have been assessed"
+        },
+        {
+          "id": "D",
+          "text": "Usability should be built in from the initiation of the project"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-134",
+      "type": "A",
+      "points": 1,
+      "prompt": "Why should we determine elicitation techniques during the requirements planning?",
+      "options": [
+        {
+          "id": "A",
+          "text": "We shouldn't. We should wait until we are in the elicitation phases of the project."
+        },
+        {
+          "id": "B",
+          "text": "Selecting the techniques now lets the stakeholders plan their time and lets the analysts prepare"
+        },
+        {
+          "id": "C",
+          "text": "Some techniques will require outside assistance and we have to budget for that now"
+        },
+        {
+          "id": "D",
+          "text": "The elicitation techniques we select will determine how the lifecycle of the project"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-135",
+      "type": "A",
+      "points": 1,
+      "prompt": "Why should traceability be tracked during elicitation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "So you know who should pay the cost of implementing a particular requirement"
+        },
+        {
+          "id": "B",
+          "text": "So you know the source of the requirement for user acceptance testing"
+        },
+        {
+          "id": "C",
+          "text": "So you can determine if the source of requirement is valid"
+        },
+        {
+          "id": "D",
+          "text": "So you will know the origin of the requirement in the event that changes are needed"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-136",
+      "type": "A",
+      "points": 1,
+      "prompt": "You are eliciting requirements in a workplace. You have been given the opportunity to sit with the users of the current product that will be replaced by the product you are defining. You have been instructed not to interact with the users. Which type of elicitation technique are you employing?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Passive observation"
+        },
+        {
+          "id": "B",
+          "text": "Passive interviewing"
+        },
+        {
+          "id": "C",
+          "text": "Passive watching"
+        },
+        {
+          "id": "D",
+          "text": "Passive survey"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-137",
+      "type": "A",
+      "points": 1,
+      "prompt": "Your stakeholders are having a difficult time understanding and visualizing the new product you are documenting. Your developers have agreed to create a mock-up of the interface so you can walk the stakeholders through several user scenarios to get their feedback. Which elicitation technique are you using?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hands-on focus"
+        },
+        {
+          "id": "B",
+          "text": "Brainstorming"
+        },
+        {
+          "id": "C",
+          "text": "Prototyping"
+        },
+        {
+          "id": "D",
+          "text": "Use case review"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-138",
+      "type": "A",
+      "points": 1,
+      "prompt": "Your developers have obtained a copy of the old requirements from the legacy system you are trying to replace. There is no running version of this system and everyone who worked on it has left the company. Given this information, what is the best technique to use to leverage this old documentation?",
+      "options": [
+        {
+          "id": "A",
+          "text": "You shouldn't use the documentation because you don't know if it is correct"
+        },
+        {
+          "id": "B",
+          "text": "Document analysis"
+        },
+        {
+          "id": "C",
+          "text": "Surveying the available information"
+        },
+        {
+          "id": "D",
+          "text": "Interface analysis"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-139",
+      "type": "A",
+      "points": 1,
+      "prompt": "Does risk analysis also apply to constraints and assumptions?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yes"
+        },
+        {
+          "id": "B",
+          "text": "Only to constraints"
+        },
+        {
+          "id": "C",
+          "text": "Only to assumptions"
+        },
+        {
+          "id": "D",
+          "text": "No"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-140",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following should be included in the glossary?",
+      "options": [
+        {
+          "id": "A",
+          "text": "All terms that can possibly be used by the project"
+        },
+        {
+          "id": "B",
+          "text": "Acronyms"
+        },
+        {
+          "id": "C",
+          "text": "All organizational terms"
+        },
+        {
+          "id": "D",
+          "text": "All terms covered in standards documents"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-141",
+      "type": "A",
+      "points": 1,
+      "prompt": "\"The system should have a fast response time\" is an example of what type of requirement?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Unbounded"
+        },
+        {
+          "id": "B",
+          "text": "Irrational"
+        },
+        {
+          "id": "C",
+          "text": "Over-specified"
+        },
+        {
+          "id": "D",
+          "text": "Over-constrained"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-142",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following sections is the core of the IEEE 830 document?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Overall descriptions"
+        },
+        {
+          "id": "B",
+          "text": "Specific requirements"
+        },
+        {
+          "id": "C",
+          "text": "Product perspective"
+        },
+        {
+          "id": "D",
+          "text": "Product functions"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-143",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which is more important?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Following the template"
+        },
+        {
+          "id": "B",
+          "text": "Developing the best content"
+        },
+        {
+          "id": "C",
+          "text": "Using the IEEE specs"
+        },
+        {
+          "id": "D",
+          "text": "Passing an external IEEE audit"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-144",
+      "type": "A",
+      "points": 1,
+      "prompt": "What does the stability attribute of a requirement indicate?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The author of the requirement"
+        },
+        {
+          "id": "B",
+          "text": "The priority of the requirement"
+        },
+        {
+          "id": "C",
+          "text": "The state of the requirement in the development lifecycle"
+        },
+        {
+          "id": "D",
+          "text": "The maturity of the requirement"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-145",
+      "type": "A",
+      "points": 1,
+      "prompt": "Who usually creates the physical model of the system being defined?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The project manager"
+        },
+        {
+          "id": "B",
+          "text": "The business analyst"
+        },
+        {
+          "id": "C",
+          "text": "The developers"
+        },
+        {
+          "id": "D",
+          "text": "The testers"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-146",
+      "type": "A",
+      "points": 1,
+      "prompt": "What is the meaning of two parallel lines on a data flow diagram?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Data store"
+        },
+        {
+          "id": "B",
+          "text": "Data process"
+        },
+        {
+          "id": "C",
+          "text": "Data transition"
+        },
+        {
+          "id": "D",
+          "text": "External entity"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-147",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is a true statement regarding state transition diagrams?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Show all possible error states"
+        },
+        {
+          "id": "B",
+          "text": "Show both the valid and invalid transitions"
+        },
+        {
+          "id": "C",
+          "text": "Show only the invalid transitions"
+        },
+        {
+          "id": "D",
+          "text": "Show only the valid transitions"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-148",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is an expected benefit of prototyping?",
+      "options": [
+        {
+          "id": "A",
+          "text": "User acceptance testing can be conducted before the product is complete"
+        },
+        {
+          "id": "B",
+          "text": "The user gets to see an early version of the product and can provide feedback"
+        },
+        {
+          "id": "C",
+          "text": "The final product is developed more quickly"
+        },
+        {
+          "id": "D",
+          "text": "The user can walk through the flow of the product before it is developed"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-149",
+      "type": "A",
+      "points": 1,
+      "prompt": "What is meant by a use case that is classified as \"extend\"?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is an optionally completed alternate flow"
+        },
+        {
+          "id": "B",
+          "text": "It is a part of the original use case"
+        },
+        {
+          "id": "C",
+          "text": "It is a part of the main flow"
+        },
+        {
+          "id": "D",
+          "text": "All use cases are \"extend\" use cases"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-150",
+      "type": "A",
+      "points": 1,
+      "prompt": "What is the name of the diagram that graphically shows the sequence of activities and logic that controls the flow?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Activity diagram"
+        },
+        {
+          "id": "B",
+          "text": "Data flow diagram"
+        },
+        {
+          "id": "C",
+          "text": "Use case description"
+        },
+        {
+          "id": "D",
+          "text": "State machine diagram"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-151",
+      "type": "A",
+      "points": 1,
+      "prompt": "You have reviewed your requirements and discovered that you have two requirements that conflict. What should you do now?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Delete one of the requirements"
+        },
+        {
+          "id": "B",
+          "text": "Ignore the conflict and let the developers decide what to implement"
+        },
+        {
+          "id": "C",
+          "text": "Defer the resolution until user acceptance test"
+        },
+        {
+          "id": "D",
+          "text": "Research the source of each requirement and work with the stakeholders to resolve the conflict"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-152",
+      "type": "A",
+      "points": 1,
+      "prompt": "Who is primarily concerned with the requirements being correct?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Customer"
+        },
+        {
+          "id": "B",
+          "text": "Tester"
+        },
+        {
+          "id": "C",
+          "text": "Developer"
+        },
+        {
+          "id": "D",
+          "text": "Project manager"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-153",
+      "type": "A",
+      "points": 1,
+      "prompt": "Where should we document conflicts?",
+      "options": [
+        {
+          "id": "A",
+          "text": "System requirements specification"
+        },
+        {
+          "id": "B",
+          "text": "Requirements issue log"
+        },
+        {
+          "id": "C",
+          "text": "Entity relationship diagrams"
+        },
+        {
+          "id": "D",
+          "text": "Use cases"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-154",
+      "type": "A",
+      "points": 1,
+      "prompt": "Why would you want to conduct multiple presentations for the requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To eliminate scope creep"
+        },
+        {
+          "id": "B",
+          "text": "Because there are too many people for one review session"
+        },
+        {
+          "id": "C",
+          "text": "So the presentations can be tailored for specific audience"
+        },
+        {
+          "id": "D",
+          "text": "To eliminate additional conflicts"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-155",
+      "type": "A",
+      "points": 1,
+      "prompt": "Why should we use a checklist when reviewing requirements?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A checklist ensures we are consistent in our reviews"
+        },
+        {
+          "id": "B",
+          "text": "A checklist saves time"
+        },
+        {
+          "id": "C",
+          "text": "A checklist guarantees that we check the formatting of each requirement"
+        },
+        {
+          "id": "D",
+          "text": "A checklist helps us to assign areas of verification to the people in the review meeting"
+        }
+      ],
+      "correctAnswer": [
+        "A"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-156",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following review types is least formal?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Audits"
+        },
+        {
+          "id": "B",
+          "text": "Walkthroughs"
+        },
+        {
+          "id": "C",
+          "text": "Inspections"
+        },
+        {
+          "id": "D",
+          "text": "Technical reviews"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-157",
+      "type": "A",
+      "points": 1,
+      "prompt": "Should managers attend the reviews?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Never"
+        },
+        {
+          "id": "B",
+          "text": "Always"
+        },
+        {
+          "id": "C",
+          "text": "Only as observers but not participants"
+        },
+        {
+          "id": "D",
+          "text": "It depends on the people involved"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-158",
+      "type": "A",
+      "points": 1,
+      "prompt": "You have obtained the complete sign-off of your requirements. Whew! Now what?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Now you move on to your next projects"
+        },
+        {
+          "id": "B",
+          "text": "Now you take a much needed vacation"
+        },
+        {
+          "id": "C",
+          "text": "Now you change your focus to assisting the implementation team"
+        },
+        {
+          "id": "D",
+          "text": "Now you start developing the acceptance test plans"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-159",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is a true statement regarding the requirements baseline?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is the starting point for the requirements"
+        },
+        {
+          "id": "B",
+          "text": "The requirements are baselined when the project is complete and approved by the customer"
+        },
+        {
+          "id": "C",
+          "text": "It can be considered a contract between the customer and the rest of the project team"
+        },
+        {
+          "id": "D",
+          "text": "It is the point from which the developers begin to make changes to create an implementation project"
+        }
+      ],
+      "correctAnswer": [
+        "C"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-160",
+      "type": "A",
+      "points": 1,
+      "prompt": "Which of the following is a benefit of having good requirement traceability?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Extra tracking costs"
+        },
+        {
+          "id": "B",
+          "text": "Verification that each requirement has been implemented"
+        },
+        {
+          "id": "C",
+          "text": "Ownership to the verification tasks"
+        },
+        {
+          "id": "D",
+          "text": "Tracking of the cost of each requirement"
+        }
+      ],
+      "correctAnswer": [
+        "B"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    },
+    {
+      "id": "QZI-161",
+      "type": "A",
+      "points": 1,
+      "prompt": "What does a CCB do?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Control project budgets"
+        },
+        {
+          "id": "B",
+          "text": "Conduct schedule and status meetings"
+        },
+        {
+          "id": "C",
+          "text": "Review requirements as they are gatheres"
+        },
+        {
+          "id": "D",
+          "text": "Manage change"
+        }
+      ],
+      "correctAnswer": [
+        "D"
+      ],
+      "explanation": "",
+      "reference": "User-provided Quizlet question set; selected key corrections cross-checked against available CPRE syllabus concepts"
+    }
+  ],
+  "skipped": [
+    {
+      "id": "QZI-042",
+      "prompt": "The following state diagram is to be found in a requirements specification for an order management system. Which of the following requirements is consistent with the diagram? (2 Points)",
+      "reason": "excluded: original state diagram missing; cannot faithfully reconstruct from answer choices alone"
+    },
+    {
+      "prompt": "Which of the following is not an IREB validation quality criteria for specification content?",
+      "reason": "missing answer key"
+    },
+    {
+      "prompt": "If changes are required to the requirements during the implementation phases of the project, what should the analyst do?",
+      "reason": "missing answer key"
+    }
+  ]
+}

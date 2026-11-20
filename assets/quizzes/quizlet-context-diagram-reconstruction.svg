@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="560" viewBox="0 0 1080 560" role="img" aria-labelledby="title desc">
+<title id="title">Reconstructed shipment-system context sketch</title>
+<desc id="desc">A central shipment system connected to a truck, truck driver, loading crane, and an unclear external actor. Some data-flow labels are intentionally marked unclear, based only on the supplied question wording; this is not the missing original diagram.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0 10 4 0 8Z" fill="#51475a"/></marker><style>.box{fill:#fff;stroke:#76227b;stroke-width:3;rx:12}.center{fill:#f1e4f1;stroke:#76227b;stroke-width:4;rx:16}.t{font:700 22px system-ui,sans-serif;fill:#241b2a;text-anchor:middle}.s{font:17px system-ui,sans-serif;fill:#504658;text-anchor:middle}.note{font:600 16px system-ui,sans-serif;fill:#76227b}</style></defs>
+<rect width="1080" height="560" fill="#fbf9fc"/>
+<text x="540" y="42" class="t">Shipment system · context sketch</text>
+<text x="540" y="70" class="s">Reconstructed from the question text; original context diagram was not supplied</text>
+<rect class="center" x="390" y="205" width="300" height="130"/>
+<text x="540" y="258" class="t">Shipment</text><text x="540" y="288" class="t">management system</text>
+<rect class="box" x="60" y="130" width="220" height="85"/><text x="170" y="181" class="t">Truck</text>
+<rect class="box" x="60" y="350" width="220" height="85"/><text x="170" y="401" class="t">Truck driver</text>
+<rect class="box" x="800" y="130" width="220" height="85"/><text x="910" y="181" class="t">Loading crane</text>
+<rect x="800" y="350" width="220" height="85" rx="12" fill="#fff8e6" stroke="#b45309" stroke-width="3" stroke-dasharray="8 6"/><text x="910" y="401" class="t">???</text>
+<path d="M280 170 390 225" fill="none" stroke="#51475a" stroke-width="3" marker-end="url(#arrow)"/><text x="312" y="178" class="s">truck data</text>
+<path d="M280 390 390 315" fill="none" stroke="#51475a" stroke-width="3" marker-end="url(#arrow)"/><text x="296" y="365" class="s">shipment details</text>
+<path d="M690 230 800 173" fill="none" stroke="#51475a" stroke-width="3" marker-end="url(#arrow)"/><text x="715" y="187" class="s">??? interaction</text>
+<path d="M690 310 800 390" fill="none" stroke="#b45309" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#arrow)"/><text x="716" y="359" class="note">Goods???</text>
+<path d="M170 215 170 350" fill="none" stroke="#8d2b91" stroke-width="2" stroke-dasharray="5 5"/><text x="186" y="291" class="note">external-to-external link?</text>
+<rect x="60" y="480" width="960" height="48" rx="8" fill="#f1e4f1"/><text x="540" y="510" class="s">Dashed labels denote ambiguity highlighted by the prompt—not verified details from the missing source figure.</text>
+</svg>

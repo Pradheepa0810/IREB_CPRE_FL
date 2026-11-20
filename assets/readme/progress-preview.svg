@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="590" viewBox="0 0 1200 590" role="img" aria-labelledby="title desc">
+  <title id="title">CPRE Study Progress Overview preview</title>
+  <desc id="desc">A preview of current progress metrics: overall readiness, chapters mastered, quiz-passed chapters, and a per-chapter readiness table. Sample values represent a fresh study profile.</desc>
+  <rect width="1200" height="590" fill="#f7f6f7"/>
+  <rect width="1200" height="68" fill="#76227b"/>
+  <text x="54" y="43" fill="#fff" font-family="Arial, sans-serif" font-size="24" font-weight="700">▤ CPRE <tspan fill="#ead6eb">Study</tspan></text>
+  <g fill="#fff" font-family="Arial, sans-serif" font-size="16" font-weight="600"><text x="445" y="41">Chapters</text><text x="548" y="41">Case study</text><text x="660" y="41">Final Mock</text><text x="764" y="41" font-weight="700">Progress</text><text x="857" y="41">Revisit</text></g>
+  <circle cx="1125" cy="34" r="17" fill="#ffffff20" stroke="#ffffff" stroke-width="2"/><path d="M1125 25v18m-9-9h18" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  <g font-family="Arial, sans-serif">
+    <text x="62" y="126" fill="#19151a" font-size="32" font-weight="700">Progress Overview</text>
+    <text x="62" y="158" fill="#615963" font-size="17">Your readiness across all 7 CPRE chapters</text>
+    <g transform="translate(62 184)"><rect width="330" height="104" rx="13" fill="#fff" stroke="#ded9df" stroke-width="2"/><text x="24" y="49" fill="#76227b" font-size="30" font-weight="700">—</text><text x="24" y="78" fill="#615963" font-size="15">Overall readiness</text></g>
+    <g transform="translate(435 184)"><rect width="330" height="104" rx="13" fill="#fff" stroke="#ded9df" stroke-width="2"/><text x="24" y="49" fill="#76227b" font-size="30" font-weight="700">0/7</text><text x="24" y="78" fill="#615963" font-size="15">Chapters ≥70% mastered</text></g>
+    <g transform="translate(808 184)"><rect width="330" height="104" rx="13" fill="#fff" stroke="#ded9df" stroke-width="2"/><text x="24" y="49" fill="#76227b" font-size="30" font-weight="700">0/7</text><text x="24" y="78" fill="#615963" font-size="15">Chapters quiz-passed</text></g>
+    <rect x="62" y="312" width="1076" height="210" rx="13" fill="#fff" stroke="#ded9df" stroke-width="2"/>
+    <rect x="63" y="313" width="1074" height="43" rx="12" fill="#f2edf2"/>
+    <g fill="#615963" font-size="14" font-weight="700"><text x="82" y="340">#</text><text x="132" y="340">Chapter</text><text x="525" y="340">Flashcard mastery</text><text x="735" y="340">Best quiz</text><text x="837" y="340">Last quiz</text><text x="1010" y="340">Readiness</text></g>
+    <g fill="#19151a" font-size="14"><text x="82" y="390">1</text><text x="132" y="390">The Role and Tasks of a Requirements Engineer</text><text x="525" y="390">0%</text><text x="735" y="390">—</text><text x="837" y="390">—</text><text x="1010" y="390">Not started</text></g>
+    <g fill="#19151a" font-size="14"><text x="82" y="430">2</text><text x="132" y="430">Fundamental Principles of Requirements Engineering</text><text x="525" y="430">0%</text><text x="735" y="430">—</text><text x="837" y="430">—</text><text x="1010" y="430">Not started</text></g>
+    <g fill="#19151a" font-size="14"><text x="82" y="470">3</text><text x="132" y="470">Requirements Documentation (Work Products)</text><text x="525" y="470">0%</text><text x="735" y="470">—</text><text x="837" y="470">—</text><text x="1010" y="470">Not started</text></g>
+    <text x="62" y="555" fill="#615963" font-size="14">Readiness = 40% flashcard mastery + 60% best quiz score · Pass mark: 70%</text>
+  </g>
+</svg>

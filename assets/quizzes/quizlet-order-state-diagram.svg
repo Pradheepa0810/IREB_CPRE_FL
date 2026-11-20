@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="500" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">Reconstructed order-management state diagram</title>
+<desc id="desc">Illustrative state flow reconstructed from the answer-keyed statements: an order is checked, products are dispatched, then delivered and invoiced; discontinued products follow an exception path. Invoice issuance occurs only after dispatch.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0 10 4 0 8Z" fill="#51475a"/></marker><style>.state{fill:#fff;stroke:#76227b;stroke-width:3}.txt{font:650 18px system-ui,sans-serif;fill:#241b2a;text-anchor:middle}.small{font:15px system-ui,sans-serif;fill:#504658}.flow{stroke:#51475a;stroke-width:2.5;fill:none;marker-end:url(#arrow)}</style></defs>
+<rect width="960" height="500" fill="#fbf9fc"/><text x="480" y="36" class="txt">Order management · reconstructed state flow</text><text x="480" y="62" class="small" text-anchor="middle">Illustrative reconstruction from the question wording; original state diagram was not supplied.</text>
+<circle cx="70" cy="250" r="11" fill="#241b2a"/><path class="flow" d="M81 250h44"/><rect class="state" x="125" y="220" width="150" height="60" rx="25"/><text x="200" y="256" class="txt">Order placed</text>
+<path class="flow" d="M275 250h55"/><rect class="state" x="330" y="220" width="165" height="60" rx="25"/><text x="412" y="256" class="txt">Products checked</text>
+<path class="flow" d="M495 250h55"/><text x="519" y="232" class="small">[available]</text><rect class="state" x="550" y="220" width="150" height="60" rx="25"/><text x="625" y="256" class="txt">Dispatched</text>
+<path class="flow" d="M700 250h55"/><rect class="state" x="755" y="220" width="150" height="60" rx="25"/><text x="830" y="256" class="txt">Delivered</text>
+<path class="flow" d="M830 280v94H735"/><rect class="state" x="570" y="345" width="165" height="60" rx="25"/><text x="652" y="381" class="txt">Invoice issued</text><text x="770" y="351" class="small">only after dispatch</text>
+<path class="flow" d="M412 280v125h-80"/><text x="346" y="315" class="small">[discontinued]</text><rect class="state" x="170" y="375" width="165" height="60" rx="25"/><text x="252" y="411" class="txt">Not delivered</text>
+</svg>

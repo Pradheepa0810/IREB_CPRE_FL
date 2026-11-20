@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="590" viewBox="0 0 900 590" role="img" aria-labelledby="title desc">
+<title id="title">Reconstructed simplified order-processing activity diagram</title>
+<desc id="desc">An illustrative reconstruction from the question text: receive order, fork into goods compilation and destination handling, split destination into export and domestic alternatives, then join and issue invoice. The alternative paths should merge with a decision/merge diamond rather than a synchronization bar.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0 10 4 0 8Z" fill="#51475a"/></marker><style>.act{fill:#fff;stroke:#76227b;stroke-width:2.5;rx:15}.dia{fill:#f1e4f1;stroke:#76227b;stroke-width:2.5}.txt{font:600 17px system-ui,sans-serif;fill:#241b2a;text-anchor:middle}.small{font:15px system-ui,sans-serif;fill:#504658}.flow{stroke:#51475a;stroke-width:2.3;fill:none;marker-end:url(#arrow)}.bar{fill:#51475a}.warn{fill:#fff4e5;stroke:#b45309;stroke-width:2;rx:8}</style></defs>
+<rect width="900" height="590" fill="#fbf9fc"/><text x="450" y="35" class="txt">Order processing · illustrative reconstruction</text><text x="450" y="60" class="small" text-anchor="middle">The source image was absent; this diagram illustrates the described flow, not a recovered original.</text>
+<circle cx="450" cy="92" r="10" fill="#241b2a"/><path class="flow" d="M450 102v22"/><rect class="act" x="350" y="125" width="200" height="55"/><text x="450" y="159" class="txt">Receive order</text>
+<path class="flow" d="M450 180v24"/><rect class="bar" x="170" y="204" width="560" height="9" rx="4"/><path class="flow" d="M260 213v28"/><path class="flow" d="M640 213v28"/>
+<rect class="act" x="155" y="242" width="210" height="58"/><text x="260" y="277" class="txt">Compile goods</text>
+<rect class="act" x="535" y="242" width="210" height="58"/><text x="640" y="277" class="txt">Choose destination</text>
+<path class="flow" d="M640 300v28"/><path class="dia" d="M640 328 700 370 640 412 580 370Z"/><text x="640" y="376" class="txt">Type?</text>
+<path class="flow" d="M580 370H440v38"/><text x="495" y="356" class="small">[domestic]</text><path class="flow" d="M700 370h70v38"/><text x="713" y="356" class="small">[export]</text>
+<rect class="act" x="340" y="408" width="200" height="54"/><text x="440" y="442" class="txt">Domestic order</text><rect class="act" x="670" y="408" width="200" height="54"/><text x="770" y="442" class="txt">Export order</text>
+<path class="flow" d="M440 462v28h100"/><path class="flow" d="M770 462v28H540"/><path class="flow" d="M260 300v190H360"/><rect class="bar" x="355" y="490" width="210" height="9" rx="4"/><text x="675" y="511" class="small">Alternative destination paths merge here</text>
+<path class="flow" d="M460 499v24"/><rect class="act" x="360" y="525" width="200" height="50"/><text x="460" y="557" class="txt">Issue invoice</text>
+</svg>
