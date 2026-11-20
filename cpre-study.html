@@ -1809,6 +1809,7 @@ function renderDashboard(){
   const totalQ=DATA.chapters.reduce((a,c)=>a+c.quiz.length,0);
 
   let html=`<div class="pg-hdr"><h1 class="pg-title">CPRE Foundation Level</h1>
+    <p style="font-size:1.05rem;font-weight:800;color:var(--accent-d);margin:.35rem 0 .45rem">Content reference: IREB CPRE Foundation Level Syllabus · version 1.2.0</p>
     <p class="pg-sub">Self-study — ${DATA.chapters.length} chapters · ${totalCards} flashcards · ${totalQ} quiz questions</p></div>`;
 
   html+=`<div class="ch-grid">`;

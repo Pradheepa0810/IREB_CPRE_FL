@@ -14,7 +14,7 @@ These are vector previews of the current interface, not screenshots.
 
 ## What is included
 
-- **Chapters:** seven chapters, 596 quiz questions, and 246 flashcards. Add/manage custom quizzes and flashcards below the chapter tiles.
+- **Chapters:** based on the IREB CPRE Foundation Level Syllabus, version 1.2.0; seven chapters, 596 quiz questions, and 246 flashcards. Add/manage custom quizzes and flashcards below the chapter tiles.
 - **Case study:** five practical 45-question sets. These are untimed practice and do not show a pass threshold.
 - **Final Mock:** 15 fixed 45-question sets. Tests are timed (75 minutes, or 90 minutes with the non-native-language accommodation) and show a 70% pass threshold.
 - **Question formats:** A (single choice), P (select exactly N, partial credit and zero for over-selection), and K (independent true/false statements with partial credit).
@@ -66,6 +66,7 @@ Useful notes:
 
 - Relative asset paths will work on Pages as long as the files remain inside the repository.
 - Study progress is stored in each visitor's browser; Pages does not provide cross-device or shared-account synchronization.
+- GitHub repository owners can check private, rolling 14-day traffic counts in the repository's `Insights` → `Traffic` page. These counts are not shown to site visitors; they are basic repository traffic metrics, not detailed per-page analytics.
 - If you later add a build step, update the Pages source to deploy the generated output folder instead.
 ## Notes
 
